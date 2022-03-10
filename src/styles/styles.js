@@ -78,4 +78,21 @@ const signInScr = StyleSheet.create({
   },
 });
 
-export { welcomeScr, signInScr };
+const forgetPasswordScr = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: screenWidth,
+    height: screenHeight,
+    paddingTop: StatusBar.currentHeight,
+    backgroundColor: MainBackground,
+  },
+  inputContainer: {
+    justifyContent: "flex-start",
+    width: screenWidth * 0.75,
+  },
+  emptyPadding: { paddingTop: screenHeight * 0.025 },
+});
+
+export { welcomeScr, signInScr, forgetPasswordScr };

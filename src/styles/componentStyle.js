@@ -88,7 +88,8 @@ const textInputComponent = StyleSheet.create({
     backgroundColor: inputColor,
     height:screenHeight * 0.06,
     marginVertical: screenHeight * 0.005,
-    borderRadius:screenHeight *0.015
+    borderRadius:screenHeight *0.015,
+    paddingHorizontal:screenHeight * 0.02
   },
 });
 

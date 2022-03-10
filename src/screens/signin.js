@@ -33,6 +33,7 @@ export default class SignIn extends React.Component {
 
   _handleValueChange = (key, value) => {
     this.setState({ [key]: value });
+    //console.log(this.state)
   };
 
   _signIn = () => {
@@ -42,22 +43,48 @@ export default class SignIn extends React.Component {
       this.navigate("AppStack");
     }
   };
+
+  _activateSignInInputs = () => {
+    this.setState({ signIn: true });
+  };
   render() {
     let { signIn } = this.state;
     return (
       <View style={signInScr.container}>
         {!signIn ? (
-          <Dialog head={DONT_HAVE_ACCOUNT} body={NEVER_MIND_STATEMENT} />
+          <View>
+            <Dialog head={DONT_HAVE_ACCOUNT} body={NEVER_MIND_STATEMENT} />
+            <View style={signInScr.emptyPadding}></View>
+            <Button
+              title={SIGN_IN}
+              onPress={() => this._activateSignInInputs()}
+            />
+          </View>
         ) : (
-          <View style={signInScr.inputContainer}>
-            <TxtInput label={EMAIL} onChange={this._handleValueChange} />
-            <TxtInput label={PASSWORD} onChange={this._handleValueChange} />
+          <View>
+            <View style={signInScr.inputContainer}>
+              <TxtInput
+                label={EMAIL}
+                handleValueChange={this._handleValueChange}
+                value={"email"}
+                keyboardType={"email-address"}
+              />
+              <TxtInput
+                label={PASSWORD}
+                handleValueChange={this._handleValueChange}
+                value={"password"}
+                secureTextEntry={true}
+              />
+            </View>
+            <View style={signInScr.emptyPadding}></View>
+            <Button title={SIGN_IN} onPress={() => this._signIn()} />
           </View>
         )}
         <View style={signInScr.emptyPadding}></View>
-        <Button title={SIGN_IN} onPress={() => this._signIn()} />
-        <View style={signInScr.emptyPadding}></View>
-        <UnderlineButton title={FORGOT_PASSWORD} />
+        <UnderlineButton
+          title={FORGOT_PASSWORD}
+          onPress={() => this.navigate("FORGET PASSWORD")}
+        />
         <OrDivider />
         <Text style={signInScr.normalText}>{CONTINUE_WITH}</Text>
         <Button type="outline" title={GOOGLE} />

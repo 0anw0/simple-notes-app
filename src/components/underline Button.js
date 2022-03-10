@@ -5,7 +5,7 @@ import { underlineButtton } from "../styles/componentStyle.js";
 
 function UnderlineButton(props) {
   return (
-    <TouchableOpacity onPress={props.onPress}>
+    <TouchableOpacity onPress={()=>props.onPress()}>
       <Text style={underlineButtton.text}>{props.title}</Text>
     </TouchableOpacity>
   );

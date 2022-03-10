@@ -15,6 +15,7 @@ export const EnglishLang = {
   SIGN_IN: "SIGN IN",
   RESET_PASSWORD: "RESET PASSWORD",
   ENTER_YOUR_EMAIL: "Enter your Email",
+  ENTER_NEW_PASSWORD:"Enter your new password",
   RE_ENTER_PASSWORD: "Re-enter Password",
   SEND_EMAIL: "SEND EMAIL",
   MY_NOTES: "MY NOTES",
