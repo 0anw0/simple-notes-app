@@ -1,13 +1,14 @@
 import React from "react";
-import { TextInput } from "react-native";
+import { View, Text, TextInput } from "react-native";
 
+import { textInputComponent } from "../styles/componentStyle.js";
 
-function TxtInput() {
+function TxtInput(props) {
   return (
-    <TextInput
-      placeholder="Email"
-      autoCapitalize="none"
-    />
+    <View>
+      <Text style={textInputComponent.inputLabel}>{props.label}</Text>
+      <TextInput  style={textInputComponent.inputStyle} />
+    </View>
   );
 }
 

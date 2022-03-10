@@ -16,6 +16,8 @@ const {
   CONTINUE_WITH,
   NEVER_MIND_STATEMENT,
   DONT_HAVE_ACCOUNT,
+  EMAIL,
+  PASSWORD,
 } = EnglishLang;
 
 export default class SignIn extends React.Component {
@@ -24,25 +26,37 @@ export default class SignIn extends React.Component {
     this.navigate = this.props.navigation.navigate;
     this.state = {
       signIn: false,
-      email: "",
-      password: "",
+      email: "ahmad@gmail.com",
+      password: "1234566789",
     };
   }
+
+  _handleValueChange = (key, value) => {
+    this.setState({ [key]: value });
+  };
+
+  _signIn = () => {
+    const { email, password } = this.state;
+    if (email.length > 5 && password.length > 8) {
+      //handle db process
+      this.navigate("AppStack");
+    }
+  };
   render() {
-    let {signin}=this.state
+    let { signIn } = this.state;
     return (
       <View style={signInScr.container}>
-        <View style={signInScr.emptyPadding}></View>
-        <Dialog head={DONT_HAVE_ACCOUNT} body={NEVER_MIND_STATEMENT}/>
-        {signin ? (
-          <View>
-            <Text>Email</Text>
-            <TxtInput />
-            <Text>password</Text>
-            <TxtInput />
+        {!signIn ? (
+          <Dialog head={DONT_HAVE_ACCOUNT} body={NEVER_MIND_STATEMENT} />
+        ) : (
+          <View style={signInScr.inputContainer}>
+            <TxtInput label={EMAIL} onChange={this._handleValueChange} />
+            <TxtInput label={PASSWORD} onChange={this._handleValueChange} />
           </View>
-        ) : null}
-        <Button title={SIGN_IN} />
+        )}
+        <View style={signInScr.emptyPadding}></View>
+        <Button title={SIGN_IN} onPress={() => this._signIn()} />
+        <View style={signInScr.emptyPadding}></View>
         <UnderlineButton title={FORGOT_PASSWORD} />
         <OrDivider />
         <Text style={signInScr.normalText}>{CONTINUE_WITH}</Text>

@@ -54,9 +54,9 @@ const welcomeScr = StyleSheet.create({
 const signInScr = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
-    width: screenWidth ,
+    width: screenWidth,
     height: screenHeight,
     paddingTop: StatusBar.currentHeight,
     backgroundColor: MainBackground,
@@ -67,12 +67,15 @@ const signInScr = StyleSheet.create({
   },
   textContainer: {
     width: screenWidth * 0.75,
-    paddingBottom: screenHeight * 0.05
+    paddingBottom: screenHeight * 0.05,
   },
   dialogStyle: { textAlign: "center", fontSize: 18, color: MainTxt },
   dialogSpace: { height: screenHeight * 0.035 },
-  emptyPadding:{paddingTop: screenHeight *0.1}
+  emptyPadding: { paddingTop: screenHeight * 0.025 },
+  inputContainer: {
+    justifyContent: "flex-start",
+    width: screenWidth * 0.75,
+  },
 });
-
 
 export { welcomeScr, signInScr };

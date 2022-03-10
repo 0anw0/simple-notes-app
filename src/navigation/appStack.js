@@ -17,11 +17,11 @@ function AppStack() {
     <AppNativeStack.Navigator>
       <AppNativeStack.Screen
         name="MY NOTE"
-        component={Welcome}
+        component={MyNote}
         options={{ headerShown: false }}
       />
       <AppNativeStack.Screen
-        name="SIGN IN"
+        name="Note"
         component={Note}
         options={{
           headerShown: true,
@@ -35,25 +35,11 @@ function AppStack() {
         }}
       />
       <AppNativeStack.Screen
-        name="SIGN IN"
-        component={MyNote}
-        options={{
-          headerShown: true,
-          title: MY_NOTES,
-          headerTintColor: SecBtn,
-          headerStyle: {
-            backgroundColor: MainBtn,
-          },
-          headerBackVisible: false,
-          headerTitleAlign: "center",
-        }}
-      />
-      <AppNativeStack.Screen
-        name="FORGET PASSWORD"
+        name="CreateNote"
         component={CreateNote}
         options={{
           headerShown: true,
-          title: CREATE_A_NEW_NOTE,
+          title: MY_NOTES,
           headerTintColor: SecBtn,
           headerStyle: {
             backgroundColor: MainBtn,

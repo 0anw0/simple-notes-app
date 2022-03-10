@@ -11,7 +11,10 @@ const colorSchema = {
   MainBtnTint: "#2F2CBF",
   SecBtn: "#F7F6FF",
   SecBtnTint: "#ECEBFF",
-  dividerTone:'#A1A0F1'
+  dividerTone:'#A1A0F1',
+  inputColor:'#D2E9FF',
+  MainTextTone:"#4B85F4"
+  
 };
 
 export { screenHeight, screenWidth, colorSchema };

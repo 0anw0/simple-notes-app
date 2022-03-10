@@ -16,13 +16,7 @@ export default class ForgetPassword extends React.Component {
   }
   render() {
     return (
-      <View
-        style={{
-          paddingTop: Dimensions.get("window").height * 0.2,
-          alignItems: "center",
-          flex: 1,
-        }}
-      >
+      <View>
         <Text>HERE IS A TEXT</Text>
       </View>
     );

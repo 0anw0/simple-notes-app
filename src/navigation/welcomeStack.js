@@ -15,11 +15,11 @@ const WelcomeNativeStack = createNativeStackNavigator();
 function WelcomeStack() {
   return (
     <WelcomeNativeStack.Navigator>
-      <WelcomeNativeStack.Screen
+      {/*<WelcomeNativeStack.Screen
         name="welcomeScreen"
         component={Welcome}
         options={{ headerShown: false }}
-      />
+      />*/}
       <WelcomeNativeStack.Screen
         name="SIGN IN"
         component={SignIn}

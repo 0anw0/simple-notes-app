@@ -11,7 +11,9 @@ const {
   MainBtnTint,
   SecBtn,
   SecBtnTint,
-  dividerTone
+  dividerTone,
+  inputColor,
+  MainTextTone
 } = colorSchema;
 
 const ButtonComponent = StyleSheet.create({
@@ -41,17 +43,15 @@ const ButtonComponent = StyleSheet.create({
 });
 
 const underlineButtton = StyleSheet.create({
-  text:{
-    fontSize:14, 
-    fontWeight:'bold',
-    letterSpacing:3, 
-    borderBottomWidth: 2,
-    marginTop: screenHeight * 0.025,
-    marginBottom: screenHeight * 0.025, 
-    color:MainTxt,
-    borderColor:MainTxt
-  }
-})
+  text: {
+    fontSize: 14,
+    fontWeight: "500",
+    borderBottomWidth: 1,
+    marginTop: screenHeight * 0.02,
+    color: MainTxt,
+    borderColor: MainTxt,
+  },
+});
 
 const divider = StyleSheet.create({
   dividerContainer: {
@@ -60,28 +60,37 @@ const divider = StyleSheet.create({
     alignItems: "center",
     paddingTop: screenHeight * 0.03,
     paddingBottom: screenHeight * 0.03,
-
   },
   orDivider: {
     width: screenWidth * 0.3,
     borderTopWidth: 2,
-    borderColor:dividerTone
+    borderColor: dividerTone,
   },
   OR_Text: {
     marginLeft: screenWidth * 0.05,
     marginRight: screenWidth * 0.05,
-    color:dividerTone
+    color: dividerTone,
   },
 });
 
 const dialog = StyleSheet.create({
   textContainer: {
     width: screenWidth * 0.75,
-    paddingBottom: screenHeight * 0.05
+    paddingBottom: screenHeight * 0.05,
   },
   dialogStyle: { textAlign: "center", fontSize: 18, color: MainTxt },
   dialogSpace: { height: screenHeight * 0.035 },
-})
+});
+
+const textInputComponent = StyleSheet.create({
+  inputLabel: { color: MainTextTone, fontSize: 14, letterSpacing: 2 },
+  inputStyle: {
+    backgroundColor: inputColor,
+    height:screenHeight * 0.06,
+    marginVertical: screenHeight * 0.005,
+    borderRadius:screenHeight *0.015
+  },
+});
 
 const linearGradientColors = [MainBtn, MainBtnTint];
 const linearGradientColorsOutline = [SecBtn, SecBtnTint];
@@ -92,5 +101,6 @@ export {
   linearGradientColorsOutline,
   divider,
   underlineButtton,
-  dialog
+  dialog,
+  textInputComponent,
 };
