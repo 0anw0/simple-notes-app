@@ -3,9 +3,7 @@ import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import WelcomeStack from "./src/navigation/welcomeStack";
-import AppStack from "./src/navigation/appStack";
-
+import {WelcomeStack , AppStack} from './src/navigation/index'
 
 const Stack = createNativeStackNavigator();
 

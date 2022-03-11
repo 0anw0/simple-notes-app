@@ -13,8 +13,8 @@ const colorSchema = {
   SecBtnTint: "#ECEBFF",
   dividerTone:'#A1A0F1',
   inputColor:'#D2E9FF',
-  MainTextTone:"#4B85F4"
-  
+  MainTextTone:"#4B85F4",
+  sectionBtnTint:"#D1EBFA"
 };
 
 export { screenHeight, screenWidth, colorSchema };

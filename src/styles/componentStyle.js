@@ -13,7 +13,8 @@ const {
   SecBtnTint,
   dividerTone,
   inputColor,
-  MainTextTone
+  MainTextTone,
+  sectionBtnTint
 } = colorSchema;
 
 const ButtonComponent = StyleSheet.create({
@@ -86,11 +87,29 @@ const textInputComponent = StyleSheet.create({
   inputLabel: { color: MainTextTone, fontSize: 14, letterSpacing: 2 },
   inputStyle: {
     backgroundColor: inputColor,
-    height:screenHeight * 0.06,
+    height: screenHeight * 0.06,
     marginVertical: screenHeight * 0.005,
-    borderRadius:screenHeight *0.015,
-    paddingHorizontal:screenHeight * 0.02
+    borderRadius: screenHeight * 0.015,
+    paddingHorizontal: screenHeight * 0.02,
   },
+});
+
+const viewTypeComponent = StyleSheet.create({
+  viewContainer: {
+    flexDirection:'row',
+    justifyContent:'space-around',
+    alignItems:'center',
+    width: screenWidth * 0.75,
+    height: screenHeight * 0.075,
+    borderWidth: screenWidth * 0.01,
+    borderRadius: screenWidth * 0.025,
+    borderColor: MainBtn,
+
+  },
+  selectedViewContainer: {
+    backgroundColor:sectionBtnTint
+  },
+  unselectedViewContainer: {},
 });
 
 const linearGradientColors = [MainBtn, MainBtnTint];
@@ -104,4 +123,5 @@ export {
   underlineButtton,
   dialog,
   textInputComponent,
+  viewTypeComponent,
 };

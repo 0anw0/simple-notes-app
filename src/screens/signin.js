@@ -1,13 +1,17 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import Dialog from "../components/dialog";
-import Button from "../components/Buttons";
 import { signInScr } from "../styles/styles";
-import TxtInput from "../components/TextInput";
-import OrDivider from "../components/OrDivider";
 import { EnglishLang } from "../config/language";
-import UnderlineButton from "../components/underline Button";
+
+import {
+  Dialog,
+  Button,
+  TxtInput,
+  OrDivider,
+  EmptyPadding,
+  UnderlineButton
+} from "../components/index";
 
 const {
   SIGN_IN,
@@ -17,10 +21,10 @@ const {
   NEVER_MIND_STATEMENT,
   DONT_HAVE_ACCOUNT,
   EMAIL,
-  PASSWORD,
+  PASSWORD
 } = EnglishLang;
 
-export default class SignIn extends React.Component {
+class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
@@ -54,7 +58,7 @@ export default class SignIn extends React.Component {
         {!signIn ? (
           <View>
             <Dialog head={DONT_HAVE_ACCOUNT} body={NEVER_MIND_STATEMENT} />
-            <View style={signInScr.emptyPadding}></View>
+            <EmptyPadding />
             <Button
               title={SIGN_IN}
               onPress={() => this._activateSignInInputs()}
@@ -76,11 +80,11 @@ export default class SignIn extends React.Component {
                 secureTextEntry={true}
               />
             </View>
-            <View style={signInScr.emptyPadding}></View>
+            <EmptyPadding />
             <Button title={SIGN_IN} onPress={() => this._signIn()} />
           </View>
         )}
-        <View style={signInScr.emptyPadding}></View>
+        <EmptyPadding />
         <UnderlineButton
           title={FORGOT_PASSWORD}
           onPress={() => this.navigate("FORGET PASSWORD")}
@@ -93,32 +97,9 @@ export default class SignIn extends React.Component {
   }
 }
 
-/**
- * 
- * 
-        <TextInput
-          placeholder="Email"
-          autoCapitalize="none"     
-          value={this.state.email}
-          onChangeText={(email) => this.setState({ email })}
-        />
-        <TextInput
-          secureTextEntry
-          placeholder="Password"
-          autoCapitalize="none"
-          value={this.state.password}
-          onChangeText={(password) => this.setState({ password })}
-        />
-        <Button
-          buttonStyle={styles.button}
-          titleStyle={styles.buttonTitle}
-          title="Sign In"
-          onPress={() =>
-            this.handleSignIn(this.state.email, this.state.password)
-          }
-        />
- * 
- * handleSignIn = (email, password) => {
+export { SignIn };
+
+/* handleSignIn = (email, password) => {
     // Form Validation
     if (email.length == 0 || password.length == 0) {
       Alert.alert("Please complete the entire fields");

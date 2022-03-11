@@ -1,30 +1,26 @@
 import React from "react";
 import {
   View,
-  TextInput,
-  TouchableOpacity,
-  ImageBackground,
-  Dimensions,
   Text,
-  Alert,
 } from "react-native";
 
-export default class MyNote extends React.Component {
+import ViewType from "../components/viewType";
+import { MyNoteScr } from "../styles/styles";
+
+class MyNote extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
+    this.state = {};
   }
   render() {
     return (
-      <View
-        style={{
-          paddingTop: Dimensions.get("window").height * 0.2,
-          alignItems: "center",
-          flex: 1,
-        }}
-      >
+      <View style={MyNoteScr.container}>
+        <ViewType />
         <Text>HERE IS A TEXT</Text>
       </View>
     );
   }
 }
+
+export { MyNote };

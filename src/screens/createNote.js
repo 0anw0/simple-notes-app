@@ -1,15 +1,11 @@
 import React from "react";
 import {
   View,
-  TextInput,
-  TouchableOpacity,
-  ImageBackground,
   Dimensions,
   Text,
-  Alert,
 } from "react-native";
 
-export default class CreateNote extends React.Component {
+class CreateNote extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
@@ -28,3 +24,5 @@ export default class CreateNote extends React.Component {
     );
   }
 }
+
+export { CreateNote };

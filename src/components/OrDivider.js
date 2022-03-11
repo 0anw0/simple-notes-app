@@ -13,4 +13,4 @@ function OrDivider(props) {
   );
 }
 
-export default OrDivider;
+export {OrDivider};

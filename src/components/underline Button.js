@@ -11,4 +11,4 @@ function UnderlineButton(props) {
   );
 }
 
-export default UnderlineButton;
+export {UnderlineButton};

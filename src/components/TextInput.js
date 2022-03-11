@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, TextInput } from "react-native";
 
 import { textInputComponent } from "../styles/componentStyle.js";
@@ -24,4 +24,4 @@ function TxtInput(props) {
   );
 }
 
-export default TxtInput;
+export {TxtInput};

@@ -95,4 +95,16 @@ const forgetPasswordScr = StyleSheet.create({
   emptyPadding: { paddingTop: screenHeight * 0.025 },
 });
 
-export { welcomeScr, signInScr, forgetPasswordScr };
+const MyNoteScr = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    width: screenWidth,
+    height: screenHeight,
+    backgroundColor: MainBackground,
+  },
+  emptyPadding: { paddingTop: screenHeight * 0.025 },
+});
+
+export { welcomeScr, signInScr, forgetPasswordScr, MyNoteScr };

@@ -14,7 +14,7 @@ const {
   ENTER_NEW_PASSWORD,
 } = EnglishLang;
 
-export default class ForgetPassword extends React.Component {
+class ForgetPassword extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
@@ -85,3 +85,5 @@ export default class ForgetPassword extends React.Component {
     );
   }
 }
+
+export { ForgetPassword };

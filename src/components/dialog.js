@@ -13,4 +13,4 @@ function Dialog(props) {
   );
 }
 
-export default Dialog;
+export {Dialog};

@@ -7,7 +7,7 @@ import { EnglishLang } from "../config/language";
 
 const { SIGN_IN, ADD_NOTE_FOR_NOW } = EnglishLang;
 
-export default class Welcome extends React.Component {
+class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
@@ -36,3 +36,5 @@ export default class Welcome extends React.Component {
     );
   }
 }
+
+export { Welcome };

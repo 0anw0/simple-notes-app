@@ -1,9 +1,8 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import SignIn from "../screens/signin.js";
-import Welcome from "../screens/welcome.js";
-import ForgetPassword from "../screens/forgetPassword.js";
+import { SignIn, Welcome, ForgetPassword } from "../screens/index";
+
 import { EnglishLang } from "../config/language";
 import { colorSchema } from "../config/constants.js";
 
@@ -52,4 +51,4 @@ function WelcomeStack() {
   );
 }
 
-export default WelcomeStack;
+export {WelcomeStack};

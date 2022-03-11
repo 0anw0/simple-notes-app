@@ -1,15 +1,11 @@
 import React from "react";
 import {
   View,
-  TextInput,
-  TouchableOpacity,
-  ImageBackground,
   Dimensions,
   Text,
-  Alert,
 } from "react-native";
 
-export default class Note extends React.Component {
+class Note extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
@@ -28,3 +24,5 @@ export default class Note extends React.Component {
     );
   }
 }
+
+export { Note };

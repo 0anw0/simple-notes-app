@@ -1,9 +1,8 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Note from "../screens/Note";
-import MyNote from "../screens/myNote";
-import CreateNote from "../screens/createNote";
+import { Note, MyNote, CreateNote } from "../screens/index";
+
 import { EnglishLang } from "../config/language";
 import { colorSchema } from "../config/constants.js";
 
@@ -18,7 +17,16 @@ function AppStack() {
       <AppNativeStack.Screen
         name="MY NOTE"
         component={MyNote}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: true,
+          title: MY_NOTES,
+          headerTintColor: SecBtn,
+          headerStyle: {
+            backgroundColor: MainBtn,
+          },
+          headerBackVisible: false,
+          headerTitleAlign: "center",
+        }}
       />
       <AppNativeStack.Screen
         name="Note"
@@ -39,7 +47,7 @@ function AppStack() {
         component={CreateNote}
         options={{
           headerShown: true,
-          title: MY_NOTES,
+          title: CREATE_A_NEW_NOTE,
           headerTintColor: SecBtn,
           headerStyle: {
             backgroundColor: MainBtn,
@@ -52,4 +60,4 @@ function AppStack() {
   );
 }
 
-export default AppStack;
+export {AppStack};
