@@ -14,7 +14,7 @@ const {
   dividerTone,
   inputColor,
   MainTextTone,
-  sectionBtnTint
+  sectionBtnTint,
 } = colorSchema;
 
 const ButtonComponent = StyleSheet.create({
@@ -96,20 +96,32 @@ const textInputComponent = StyleSheet.create({
 
 const viewTypeComponent = StyleSheet.create({
   viewContainer: {
-    flexDirection:'row',
-    justifyContent:'space-around',
-    alignItems:'center',
+    alignItems: "center",
+    justifyContent:'center',
     width: screenWidth * 0.75,
-    height: screenHeight * 0.075,
+    height: screenHeight * 0.08,
     borderWidth: screenWidth * 0.01,
     borderRadius: screenWidth * 0.025,
     borderColor: MainBtn,
-
+  },
+  innerContainer: {
+    flexDirection: "row",
+    width: screenWidth * 0.72,
+    height: screenHeight * 0.08,
+  },
+  boxContainer: {
+    justifyContent: "center",
+    borderRadius: screenWidth * 0.0123,
+    alignItems: "center",
+    width: screenWidth * 0.35,
+    height: screenHeight * 0.05,
   },
   selectedViewContainer: {
-    backgroundColor:sectionBtnTint
+    backgroundColor: sectionBtnTint,
   },
-  unselectedViewContainer: {},
+  unselectedViewContainer: {
+    backgroundColor: "#fff",
+  },
 });
 
 const linearGradientColors = [MainBtn, MainBtnTint];
