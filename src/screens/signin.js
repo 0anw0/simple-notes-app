@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import { signInScr } from "../styles/styles";
-import { EnglishLang } from "../config/language";
+import { signInScr } from "../styles/index";
+import { EnglishLang } from "../config/index";
 
 import {
   Dialog,
@@ -42,7 +42,7 @@ class SignIn extends React.Component {
 
   _signIn = () => {
     const { email, password } = this.state;
-    if (email.length > 5 && password.length > 8) {
+    if (email.length > 5 && password.length > 7) {
       //handle db process
       this.navigate("AppStack");
     }
@@ -58,7 +58,7 @@ class SignIn extends React.Component {
         {!signIn ? (
           <View>
             <Dialog head={DONT_HAVE_ACCOUNT} body={NEVER_MIND_STATEMENT} />
-            <EmptyPadding />
+            <EmptyPadding paddingRatio={1}/>
             <Button
               title={SIGN_IN}
               onPress={() => this._activateSignInInputs()}
@@ -80,11 +80,11 @@ class SignIn extends React.Component {
                 secureTextEntry={true}
               />
             </View>
-            <EmptyPadding />
+            <EmptyPadding paddingRatio={1}/>
             <Button title={SIGN_IN} onPress={() => this._signIn()} />
           </View>
         )}
-        <EmptyPadding />
+        <EmptyPadding paddingRatio={1}/>
         <UnderlineButton
           title={FORGOT_PASSWORD}
           onPress={() => this.navigate("FORGET PASSWORD")}

@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Image, Text } from "react-native";
 
-import Button from "../components/Buttons";
-import { welcomeScr } from "../styles/styles";
-import { EnglishLang } from "../config/language";
+import { Button } from "../components/index";
+import { welcomeScr } from "../styles/index";
+import { EnglishLang } from "../config/index";
 
 const { SIGN_IN, ADD_NOTE_FOR_NOW } = EnglishLang;
 

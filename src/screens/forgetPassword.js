@@ -1,10 +1,9 @@
 import React from "react";
 import { View } from "react-native";
 
-import Button from "../components/Buttons";
-import TxtInput from "../components/TextInput";
-import { EnglishLang } from "../config/language";
-import { forgetPasswordScr } from "../styles/styles";
+import {Button, TxtInput} from "../components/index";
+import { EnglishLang } from "../config/index";
+import { forgetPasswordScr } from "../styles/index";
 
 const {
   RE_ENTER_PASSWORD,

@@ -3,8 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { SignIn, Welcome, ForgetPassword } from "../screens/index";
 
-import { EnglishLang } from "../config/language";
-import { colorSchema } from "../config/constants.js";
+import { EnglishLang, colorSchema } from "../config/index";
 
 const { SIGN_IN, RESET_PASSWORD } = EnglishLang;
 const { MainBtn, SecBtn } = colorSchema;
@@ -14,11 +13,11 @@ const WelcomeNativeStack = createNativeStackNavigator();
 function WelcomeStack() {
   return (
     <WelcomeNativeStack.Navigator>
-      {/*<WelcomeNativeStack.Screen
+      {<WelcomeNativeStack.Screen
         name="welcomeScreen"
         component={Welcome}
         options={{ headerShown: false }}
-      />*/}
+      />}
       <WelcomeNativeStack.Screen
         name="SIGN IN"
         component={SignIn}

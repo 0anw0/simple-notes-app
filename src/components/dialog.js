@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import { dialog } from "../styles/componentStyle";
+import { dialog } from "../styles/index";
 
 function Dialog(props) {
   return (

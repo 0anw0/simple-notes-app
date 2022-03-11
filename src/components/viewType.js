@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
-import { viewTypeComponent } from "../styles/componentStyle.js";
+import { viewTypeComponent } from "../styles/index";
 
 function ViewType(props) {
   const [viewType, setViewType] = useState("section");

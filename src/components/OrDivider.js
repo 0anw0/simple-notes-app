@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import { divider } from "../styles/componentStyle";
+import { divider } from "../styles/index";
 
-function OrDivider(props) {
+function OrDivider() {
   return (
     <View style={[divider.dividerContainer]}>
       <View style={divider.orDivider}></View>

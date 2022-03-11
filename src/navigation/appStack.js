@@ -3,8 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { Note, MyNote, CreateNote } from "../screens/index";
 
-import { EnglishLang } from "../config/language";
-import { colorSchema } from "../config/constants.js";
+import { EnglishLang, colorSchema } from "../config/index";
 
 const { MY_NOTES, NOTE, CREATE_A_NEW_NOTE } = EnglishLang;
 const { MainBtn, SecBtn } = colorSchema;
@@ -60,4 +59,4 @@ function AppStack() {
   );
 }
 
-export {AppStack};
+export { AppStack };

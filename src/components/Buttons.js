@@ -6,7 +6,7 @@ import {
   ButtonComponent,
   linearGradientColors,
   linearGradientColorsOutline,
-} from "../styles/componentStyle.js";
+} from "../styles/index";
 
 function Button(props) {
   return (

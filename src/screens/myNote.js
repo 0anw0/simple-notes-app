@@ -1,21 +1,22 @@
 import React from "react";
 import {
   View,
-  Text,
+  Text
 } from "react-native";
 
-import ViewType from "../components/viewType";
-import { MyNoteScr } from "../styles/styles";
+import {ViewType, EmptyPadding} from "../components/index";
+import { MyNoteScr } from "../styles/index";
 
 class MyNote extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
-    this.state = {};
   }
+
   render() {
     return (
       <View style={MyNoteScr.container}>
+        <EmptyPadding paddingRatio={0.5} />
         <ViewType />
         <Text>HERE IS A TEXT</Text>
       </View>

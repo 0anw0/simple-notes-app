@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TextInput } from "react-native";
 
-import { textInputComponent } from "../styles/componentStyle.js";
+import { textInputComponent } from "../styles/index";
 
 function TxtInput(props) {
   //const [value, setValue] = useState('');

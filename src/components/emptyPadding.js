@@ -1,11 +1,15 @@
 import React from "react";
 import { View } from "react-native";
-import { screenHeight } from "../config/constants.js";
+import { screenHeight } from "../styles/index";
 
 function EmptyPadding(props) {
-  let padding = 0,
-    paddingRatio = props.paddingRatio || 1;
+  let padding = 50, paddingRatio = props.paddingRatio || 0.5;
   switch (paddingRatio) {
+    case paddingRatio == 0.5: {
+      padding = screenHeight * 0.0125;
+      break;
+    }
+
     case paddingRatio == 1: {
       padding = screenHeight * 0.025;
       break;
@@ -34,7 +38,7 @@ function EmptyPadding(props) {
       padding = screenHeight * 0.025;
       break;
   }
-  return <View style={{ paddingTop: padding }}></View>;
+  return <View style={{ paddingTop: 50 }}></View>;
 }
 
-export {EmptyPadding};
+export { EmptyPadding };

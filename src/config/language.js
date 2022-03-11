@@ -1,5 +1,5 @@
-export const ArabicLang = {};
-export const EnglishLang = {
+const ArabicLang = {};
+const EnglishLang = {
   SIGN_IN: "SIGN IN",
   ADD_NOTE_FOR_NOW: "ADD NOTE FOR NOW",
   SIGN_IN_WITH_EMAIL: "SIGN IN WITH EMAIL",
@@ -15,7 +15,7 @@ export const EnglishLang = {
   SIGN_IN: "SIGN IN",
   RESET_PASSWORD: "RESET PASSWORD",
   ENTER_YOUR_EMAIL: "Enter your Email",
-  ENTER_NEW_PASSWORD:"Enter your new password",
+  ENTER_NEW_PASSWORD: "Enter your new password",
   RE_ENTER_PASSWORD: "Re-enter Password",
   SEND_EMAIL: "SEND EMAIL",
   MY_NOTES: "MY NOTES",
@@ -33,3 +33,5 @@ export const EnglishLang = {
   NOTE: "note",
   APPEND_TO_THIS_NOTE: "Append to this note",
 };
+
+export { EnglishLang, ArabicLang };

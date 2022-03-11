@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, StatusBar, Dimensions } from "react-native";
 
-import { screenWidth, screenHeight, colorSchema } from "../config/constants.js";
+import { screenWidth, screenHeight, colorSchema } from "../config/index";
 
 const {
   MainBackground,

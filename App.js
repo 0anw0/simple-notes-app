@@ -11,11 +11,13 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/**
+         * <Stack.Screen
           name="welcomeStack"
           component={WelcomeStack}
           options={{ headerShown: false }}
         />
+         */}
         <Stack.Screen
           name="AppStack"
           component={AppStack}

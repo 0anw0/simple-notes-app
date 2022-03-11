@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 
-import { underlineButtton } from "../styles/componentStyle.js";
+import { underlineButtton } from "../styles/index";
 
 function UnderlineButton(props) {
   return (
