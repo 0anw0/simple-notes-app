@@ -8,6 +8,12 @@ const { SECTIONS, LATEST } = EnglishLang;
 
 function ViewType(props) {
   const [viewType, setViewType] = useState("section");
+
+  function onTypeChange(type){
+    setViewType(type)
+    props.onTypeChange(type)
+  }
+
   return (
     <View style={[viewTypeComponent.viewContainer]}>
       <View style={viewTypeComponent.innerContainer}>
@@ -18,7 +24,7 @@ function ViewType(props) {
               ? viewTypeComponent.selectedViewContainer
               : viewTypeComponent.unselectedViewContainer,
           ]}
-          onPress={() => setViewType("section")}
+          onPress={() => onTypeChange("section")}
         >
           <Text
             style={[
@@ -30,7 +36,7 @@ function ViewType(props) {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => setViewType("latest")}
+          onPress={() => onTypeChange("latest")}
           style={[
             viewTypeComponent.boxContainer,
             viewType == "latest"

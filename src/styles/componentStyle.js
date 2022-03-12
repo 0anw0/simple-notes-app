@@ -97,9 +97,9 @@ const textInputComponent = StyleSheet.create({
 const viewTypeComponent = StyleSheet.create({
   viewContainer: {
     justifyContent: "center",
-    width: screenWidth * 0.75,
-    height: screenHeight * 0.08,
-    borderWidth: screenWidth * 0.01,
+    width: screenWidth * 0.7,
+    height: screenHeight * 0.07,
+    borderWidth: screenWidth * 0.008,
     borderRadius: screenWidth * 0.025,
     borderColor: MainBtn,
   },
@@ -107,15 +107,15 @@ const viewTypeComponent = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    width: screenWidth * 0.72,
-    height: screenHeight * 0.08,
+    width: screenWidth * 0.69,
+    height: screenHeight * 0.07,
   },
   boxContainer: {
     justifyContent: "center",
     borderRadius: screenWidth * 0.0123,
     alignItems: "center",
-    width: screenWidth * 0.335,
-    height: screenHeight * 0.05,
+    width: screenWidth * 0.315,
+    height: screenHeight * 0.0425,
     marginLeft: screenHeight * 0.01,
   },
   selectedViewContainer: {
@@ -126,9 +126,10 @@ const viewTypeComponent = StyleSheet.create({
   },
   title: {
     fontSize: 18,
+    color:MainTxt
   },
   selectedTitle: {
-    fontWeight: "bold",
+    fontWeight: "700",
   },
 });
 
@@ -144,4 +145,5 @@ export {
   dialog,
   textInputComponent,
   viewTypeComponent,
+
 };

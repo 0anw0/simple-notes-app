@@ -94,7 +94,6 @@ const forgetPasswordScr = StyleSheet.create({
     justifyContent: "flex-start",
     width: screenWidth * 0.75,
   },
-  emptyPadding: { paddingTop: screenHeight * 0.025 },
 });
 
 const MyNoteScr = StyleSheet.create({
@@ -106,7 +105,11 @@ const MyNoteScr = StyleSheet.create({
     height: screenHeight,
     backgroundColor: MainBackground,
   },
-  emptyPadding: { paddingTop: screenHeight * 0.025 },
+  listContainer:{
+    width: screenWidth * 0.9, 
+    height: screenHeight * 0.75, 
+    borderRadius:5, 
+}
 });
 
 export { welcomeScr, signInScr, forgetPasswordScr, MyNoteScr };
