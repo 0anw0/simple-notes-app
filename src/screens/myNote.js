@@ -18,7 +18,7 @@ class MyNote extends React.Component {
       <View style={MyNoteScr.container}>
         <EmptyPadding ratio={0.025} />
         <ViewType />
-        <Text>HERE IS A TEXT</Text>
+        {/* <NotesList /> */}
       </View>
     );
   }

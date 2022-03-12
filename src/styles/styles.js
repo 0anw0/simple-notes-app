@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, StatusBar } from "react-native";
 
+import { fontsLoaded } from "../assets/fonts";
+
 import { screenWidth, screenHeight, colorSchema } from "../config/index";
 const {
   MainBackground,

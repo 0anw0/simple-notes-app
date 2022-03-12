@@ -96,8 +96,7 @@ const textInputComponent = StyleSheet.create({
 
 const viewTypeComponent = StyleSheet.create({
   viewContainer: {
-    alignItems: "center",
-    justifyContent:'center',
+    justifyContent: "center",
     width: screenWidth * 0.75,
     height: screenHeight * 0.08,
     borderWidth: screenWidth * 0.01,
@@ -106,6 +105,8 @@ const viewTypeComponent = StyleSheet.create({
   },
   innerContainer: {
     flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
     width: screenWidth * 0.72,
     height: screenHeight * 0.08,
   },
@@ -113,14 +114,21 @@ const viewTypeComponent = StyleSheet.create({
     justifyContent: "center",
     borderRadius: screenWidth * 0.0123,
     alignItems: "center",
-    width: screenWidth * 0.35,
+    width: screenWidth * 0.335,
     height: screenHeight * 0.05,
+    marginLeft: screenHeight * 0.01,
   },
   selectedViewContainer: {
     backgroundColor: sectionBtnTint,
   },
   unselectedViewContainer: {
     backgroundColor: "#fff",
+  },
+  title: {
+    fontSize: 18,
+  },
+  selectedTitle: {
+    fontWeight: "bold",
   },
 });
 

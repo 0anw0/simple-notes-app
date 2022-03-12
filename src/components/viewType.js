@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
 import { viewTypeComponent } from "../styles/index";
+import { EnglishLang } from "../config/index";
+
+const { SECTIONS, LATEST } = EnglishLang;
 
 function ViewType(props) {
   const [viewType, setViewType] = useState("section");
   return (
-    <View
-      style={[
-        viewTypeComponent.viewContainer
-      ]}
-    >
-      <View style={ viewTypeComponent.innerContainer}>
+    <View style={[viewTypeComponent.viewContainer]}>
+      <View style={viewTypeComponent.innerContainer}>
         <TouchableOpacity
           style={[
             viewTypeComponent.boxContainer,
@@ -21,16 +20,32 @@ function ViewType(props) {
           ]}
           onPress={() => setViewType("section")}
         >
-          <Text>ahmad</Text>
+          <Text
+            style={[
+              viewTypeComponent.title,
+              viewType == "section" && viewTypeComponent.selectedTitle,
+            ]}
+          >
+            {SECTIONS}
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setViewType("latest")}
           style={[
             viewTypeComponent.boxContainer,
-            viewTypeComponent.selectedViewContainer,
+            viewType == "latest"
+              ? viewTypeComponent.selectedViewContainer
+              : viewTypeComponent.untitleselectedViewContainer,
           ]}
         >
-          <Text>ahmad</Text>
+          <Text
+            style={[
+              viewTypeComponent.title,
+              viewType == "latest" && viewTypeComponent.selectedTitle,
+            ]}
+          >
+            {LATEST}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
