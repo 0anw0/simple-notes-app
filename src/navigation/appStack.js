@@ -13,12 +13,13 @@ const AppNativeStack = createNativeStackNavigator();
 function AppStack() {
   return (
     <AppNativeStack.Navigator>
-      <AppNativeStack.Screen
-        name="MY NOTE"
-        component={MyNote}
+      {/**
+       * <AppNativeStack.Screen
+        name="CreateNote"
+        component={CreateNote}
         options={{
           headerShown: true,
-          title: MY_NOTES,
+          title: CREATE_A_NEW_NOTE,
           headerTintColor: SecBtn,
           headerStyle: {
             backgroundColor: MainBtn,
@@ -41,12 +42,13 @@ function AppStack() {
           headerTitleAlign: "center",
         }}
       />
+       */}
       <AppNativeStack.Screen
-        name="CreateNote"
-        component={CreateNote}
+        name="MY NOTE"
+        component={MyNote}
         options={{
           headerShown: true,
-          title: CREATE_A_NEW_NOTE,
+          title: MY_NOTES,
           headerTintColor: SecBtn,
           headerStyle: {
             backgroundColor: MainBtn,
@@ -55,6 +57,8 @@ function AppStack() {
           headerTitleAlign: "center",
         }}
       />
+
+      
     </AppNativeStack.Navigator>
   );
 }

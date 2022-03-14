@@ -15,6 +15,8 @@ const {
   inputColor,
   MainTextTone,
   sectionBtnTint,
+  pressedButtonColor,
+  pressedButtonColorTint,
 } = colorSchema;
 
 const ButtonComponent = StyleSheet.create({
@@ -53,6 +55,7 @@ const underlineButtton = StyleSheet.create({
     borderColor: MainTxt,
   },
 });
+
 
 const divider = StyleSheet.create({
   dividerContainer: {
@@ -126,7 +129,7 @@ const viewTypeComponent = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    color:MainTxt
+    color: MainTxt,
   },
   selectedTitle: {
     fontWeight: "700",
@@ -135,6 +138,7 @@ const viewTypeComponent = StyleSheet.create({
 
 const linearGradientColors = [MainBtn, MainBtnTint];
 const linearGradientColorsOutline = [SecBtn, SecBtnTint];
+
 
 export {
   ButtonComponent,
@@ -145,5 +149,4 @@ export {
   dialog,
   textInputComponent,
   viewTypeComponent,
-
 };

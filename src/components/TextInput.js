@@ -8,6 +8,7 @@ function TxtInput(props) {
   const keyboardType = props.keyboardType || "default";
   const secureTextEntry = props.secureTextEntry || false;
   const multiline = props.multiline || false;
+  const numberOfLines = props.numberOfLines || 1
   return (
     <View>
       <Text style={textInputComponent.inputLabel}>{props.label}</Text>
@@ -18,6 +19,7 @@ function TxtInput(props) {
         }}
         keyboardType={keyboardType}
         multiline={multiline}
+        numberOfLines={numberOfLines}
         secureTextEntry={secureTextEntry}
       />
     </View>

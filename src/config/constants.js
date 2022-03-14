@@ -14,7 +14,9 @@ const colorSchema = {
   dividerTone:'#A1A0F1',
   inputColor:'#D2E9FF',
   MainTextTone:"#4B85F4",
-  sectionBtnTint:"#D1EBFA"
+  sectionBtnTint:"#D1EBFA", 
+  pressedButtonColor:'#C4C3EF', 
+  pressedButtonColorTint:'#EFEFFF'
 };
 
 export { screenHeight, screenWidth, colorSchema };

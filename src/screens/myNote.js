@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import { ViewType, EmptyPadding, NoteList } from "../components/index";
+import { ViewType, EmptyPadding, NoteList, FloatButton } from "../components/index";
 import { MyNoteScr } from "../styles/index";
 
 import {d_notes} from "../dommyNotes";
@@ -33,6 +33,7 @@ class MyNote extends React.Component {
         <View style={MyNoteScr.listContainer}>
           <NoteList type={type} data={data} />
         </View>
+        <FloatButton /> 
       </View>
     );
   }
