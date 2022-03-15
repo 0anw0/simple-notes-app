@@ -34,6 +34,30 @@ const d_notes = [
     images: [],
     voice: [],
     videos: [],
+  },
+  {
+    id: 4,
+    title: "This is my Note Headline",
+    description:
+      "Lorem Ipsum is not simply random text. It has root in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
+    section: "workkk",
+    sectionTheme: "yellow",
+    timestamp: new Date(2018, 6, 5, 10, 33, 30),
+    images: [],
+    voice: [],
+    videos: [],
+  },
+  {
+    id: 5,
+    title: "This is my Note Headline",
+    description:
+      "Lorem Ipsum is not simply random text. It has root in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
+    section: "workkk",
+    sectionTheme: "yellow",
+    timestamp: new Date(2018, 6, 5, 10, 33, 30),
+    images: [],
+    voice: [],
+    videos: [],
   }
 ];
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, StatusBar, Dimensions } from "react-native";
 
-import { screenWidth, screenHeight, colorSchema } from "../config/index";
+import { screenWidth, screenHeight, colorSchema ,buttonGradient} from "../config/index";
 
 const {
   MainBackground,
@@ -20,44 +20,38 @@ const {
 } = colorSchema;
 
 const floatButtonActivator = StyleSheet.create({
-  innerContainer: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    justifyContent: "center",
-    alignItems: "center",
+  buttonPosition: {
+    position:'absolute',
+    bottom: screenHeight * -0.005
   },
   pressed: {},
   notPressed: {},
 });
 
 const floatButtonsView = StyleSheet.create({
-  container:{
-    position:'absolute',
-    bottom: screenHeight * 0.1, 
-    left: screenWidth * 0.1,
-    width: screenWidth * 0.8, 
-    height:screenHeight * 0.2, 
-
-  },
-  buttonsContainer: {
+  container: {
+    position: "absolute",
+    bottom: screenHeight * 0.05,
     width: screenWidth * 0.8,
     height: screenHeight * 0.2,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  buttonsContainer: {
     justifyContent: "flex-start",
     alignItems: "center",
   },
   firstContainer: {
-    width: screenWidth * 0.35,
-    height: screenHeight * 0.1,
+    width: screenWidth * 0.36,
+    height: screenHeight * 0.095,
     justifyContent: "space-between",
-    flexDirection:'row'
+    flexDirection: "row",
   },
   secondContainer: {
     width: screenWidth * 0.6,
     height: screenHeight * 0.1,
     justifyContent: "space-between",
-    flexDirection:'row'
-
+    flexDirection: "row",
   },
 });
 
@@ -66,36 +60,34 @@ const optionButton = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    shadowColor: MainBtnTint,
+    shadowColor: MainBtn,
     shadowOffset: {
       width: 15,
-      height: -15,
+      height: 15,
     },
     shadowOpacity: 50,
-    shadowRadius: 20,
+    shadowRadius: 25,
     elevation: 3,
   },
-  pressed: {},
-  notPressed: {},
   innerContainer: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
     justifyContent: "center",
     alignItems: "center",
   },
 });
+
 const linearGradientFLoatButton = [MainBtn, MainBtnTint];
 const linearGradientFLoatButton_Pressed = [
   pressedButtonColor,
   pressedButtonColorTint,
 ];
 
-const cameraLinearGradientFLoatButton = [MainBtn, MainBtnTint];
-const penLinearGradientFLoatButton = [MainBtn, MainBtnTint];
-const microphoneLinearGradientFLoatButton = [MainBtn, MainBtnTint];
-const videoLinearGradientFLoatButton = [MainBtn, MainBtnTint];
-
+const cameraLinearGradientFLoatButton = buttonGradient.cameraNoteButton;
+const penLinearGradientFLoatButton = buttonGradient.noteButton;
+const microphoneLinearGradientFLoatButton = buttonGradient.voiceNoteButton;
+const videoLinearGradientFLoatButton =buttonGradient.videoNoteButton ;
 
 export {
   linearGradientFLoatButton,
@@ -105,5 +97,6 @@ export {
   optionButton,
   cameraLinearGradientFLoatButton,
   penLinearGradientFLoatButton,
-  microphoneLinearGradientFLoatButton
+  microphoneLinearGradientFLoatButton,
+  videoLinearGradientFLoatButton
 };

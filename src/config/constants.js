@@ -19,4 +19,11 @@ const colorSchema = {
   pressedButtonColorTint:'#EFEFFF'
 };
 
-export { screenHeight, screenWidth, colorSchema };
+const buttonGradient = { 
+  noteButton: ['#CAB8FF', '#1D19CF'], 
+  voiceNoteButton:['#68BCE0', '#2F2BE7'], 
+  cameraNoteButton:['#8AF29B', '#2421C5'],
+  videoNoteButton:['#FFB4AF', '#4738EA', '#423EE2']
+}
+
+export { screenHeight, screenWidth, colorSchema, buttonGradient };

@@ -4,35 +4,63 @@ import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import {
+  optionButton,
   floatButtonsView,
   floatButtonActivator,
   linearGradientFLoatButton,
   linearGradientFLoatButton_Pressed,
+  cameraLinearGradientFLoatButton,
+  penLinearGradientFLoatButton,
+  microphoneLinearGradientFLoatButton,
+  videoLinearGradientFLoatButton,
 } from "../../styles/index";
 
-import { OptionButton } from "../index";
+import { colorSchema } from "../../config/index";
+
+import { OptionButton } from "./optionButton";
+
+const { MainBtn, SecBtn } = colorSchema;
 
 function FloatButton(props) {
   const [pressed, setPressed] = useState(true);
   return (
     <View style={floatButtonsView.container}>
-      <OptionButton
-        icon={pressed ? "times" : "plus"}
-        onPress={() => setPressed(!pressed)}
-      />
-
       {pressed && (
         <View style={floatButtonsView.buttonsContainer}>
           <View style={floatButtonsView.firstContainer}>
-            <OptionButton icon={"pen"} />
-            <OptionButton icon={"microphone"} />
+            <OptionButton
+              icon={"pen"}
+              gredientColors={penLinearGradientFLoatButton}
+            />
+            <OptionButton
+              icon={"microphone"}
+              gredientColors={microphoneLinearGradientFLoatButton}
+            />
           </View>
           <View style={floatButtonsView.secondContainer}>
-            <OptionButton icon={"camera"} />
-            <OptionButton icon={"video"} />
+            <OptionButton
+              icon={"camera"}
+              gredientColors={cameraLinearGradientFLoatButton}
+            />
+            <OptionButton
+              icon={"video"}
+              gredientColors={videoLinearGradientFLoatButton}
+            />
           </View>
         </View>
       )}
+      <View style={floatButtonActivator.buttonPosition}>
+        <OptionButton
+          icon={pressed ? "times" : "plus"}
+          onPress={() => setPressed(!pressed)}
+          gredientColors={
+            pressed
+              ? linearGradientFLoatButton_Pressed
+              : linearGradientFLoatButton
+          }
+          iconColor={pressed ? MainBtn : SecBtn}
+        />
+      </View>
     </View>
   );
 }
