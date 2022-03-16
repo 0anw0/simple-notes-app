@@ -99,13 +99,16 @@ const forgetPasswordScr = StyleSheet.create({
 const MyNoteScr = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     width: screenWidth,
     height: screenHeight,
     backgroundColor: MainBackground,
   },
   listContainer:{
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     paddingTop: screenHeight * 0.025 , 
     width: screenWidth * 0.9, 
     height: screenHeight * 0.775, 

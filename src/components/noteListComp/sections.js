@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity,FlatList } from "react-native";
+import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import { sectionComponent, _getSectionContainer } from "../../styles/index";
@@ -8,10 +8,14 @@ import { NoteItem } from "./noteItem";
 const Section = ({ item, type }) => {
   let styles = _getSectionContainer("yellow");
   const [collapsible, setCollapsible] = useState(false);
-  const renderNotes = ({ item }) => <NoteItem item={item} type={type}/>;
+  const renderNotes = ({ item }) => <NoteItem item={item} type={type} />;
 
   return (
-    <View>
+    <View
+      style={[
+        sectionComponent.sectionContainer
+      ]}
+    >
       <TouchableOpacity
         style={[
           sectionComponent.container,

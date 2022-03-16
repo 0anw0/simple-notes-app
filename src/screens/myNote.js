@@ -44,9 +44,7 @@ class MyNote extends React.Component {
         )}
 
         {type == "section" && (
-          <View style={MyNoteScr.listContainer}>
             <NoteSection type={'section'} data={data} />
-          </View>
         )}
         
         <FloatButton />

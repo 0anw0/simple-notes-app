@@ -3,6 +3,8 @@ import { StyleSheet, StatusBar, Dimensions } from "react-native";
 
 import { screenWidth, screenHeight, colorSchema } from "../config/index";
 
+import { noteItemDimensions } from "./index";
+
 const {
   MainBackground,
   MainTxt,
@@ -141,7 +143,6 @@ const sectionComponent = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     padding: screenWidth * 0.025,
-    width: screenWidth * 0.85,
     height: screenHeight * 0.065,
     borderWidth: screenWidth * 0.008,
     borderRadius: screenWidth * 0.0375,
@@ -152,9 +153,36 @@ const sectionComponent = StyleSheet.create({
   },
   counter: {
     width: screenWidth * 0.15,
-    fontSize:20, 
-    fontWeight:'bold'
+    fontSize: 20,
+    fontWeight: "bold",
   },
+  sectionContainer: {
+    width: screenWidth * 0.9,
+  },
+});
+
+const noteItemStyle = StyleSheet.create({
+  noteContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#ff4567",
+    marginBottom: screenHeight * 0.01,
+    borderRadius: screenHeight * 0.01,
+    padding: 5,
+  },
+  noteHeaderContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "stretch",
+    width: noteItemDimensions.noteHeaderWidth,
+  },
+  noteHeaderTitleContainer: {
+    width: noteItemDimensions.inSectionNoteHeaderWidth,
+    paddingVertical: 5,
+  },
+  noteHeaderTitle: { fontWeight: "bold", paddingLeft: 5 }, 
+  noteBody:{ textAlign: "justify", fontSize: 14 }
 });
 
 const linearGradientColors = [MainBtn, MainBtnTint];
@@ -170,4 +198,5 @@ export {
   textInputComponent,
   viewTypeComponent,
   sectionComponent,
+  noteItemStyle,
 };

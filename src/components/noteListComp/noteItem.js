@@ -2,46 +2,31 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-import { _getNoteContainerStyle } from "../../styles/index";
+import {
+  _getNoteContainerStyle,
+  noteItemDimensions,
+  noteItemStyle,
+} from "../../styles/index";
 
 import { screenWidth, screenHeight } from "../../config/index";
 
 const NoteItem = ({ item, type }) => {
+  console.log(item, type);
   const noteContainerStyle = _getNoteContainerStyle(item.sectionTheme);
   return (
     <TouchableOpacity
       style={[
-        {
-          justifyContent: "flex-start",
-          alignItems: "center",
-          borderWidth: 1,
-          borderColor: "#ff4567",
-          marginBottom: screenHeight * 0.01,
-          borderRadius: screenHeight * 0.01,
-          padding: 5,
-        },
+        noteItemStyle.noteContainer,
         noteContainerStyle.BackgroundColor,
         noteContainerStyle.containerBorder,
       ]}
     >
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "stretch",
-          width: screenWidth * 0.86,
-        }}
-      >
+      <View style={noteItemStyle.noteHeaderContainer}>
         {type == "section" ? (
-          <View
-            style={{
-              width: screenWidth * 0.5,
-              paddingVertical: 5,
-            }}
-          >
+          <View style={noteItemStyle.noteHeaderTitleContainer}>
             <Text
               style={[
-                { fontWeight: "bold", paddingLeft: 5 },
+                noteItemStyle.noteHeaderTitle,
                 noteContainerStyle.HeaderColor,
               ]}
             >
@@ -52,11 +37,7 @@ const NoteItem = ({ item, type }) => {
           <TouchableOpacity
             style={[
               noteContainerStyle.sectionTagBackgroundColor,
-              {
-                paddingLeft: 10,
-                paddingRight: 10,
-                borderRadius: 151,
-              },
+              noteItemDimensions.noteItemSectionHeaderTagDimensions,
             ]}
           >
             <Text
@@ -74,14 +55,7 @@ const NoteItem = ({ item, type }) => {
           <Text style={noteContainerStyle.dateColor}>
             {item.timestamp.toDateString()}
           </Text>
-          <TouchableOpacity
-            style={{
-              width: 20,
-              height: 20,
-              justifyContent:'center', 
-              paddingLeft: 10
-            }}
-          >
+          <TouchableOpacity style={noteItemDimensions.bergerMenuButton}>
             <FontAwesome5
               name={"ellipsis-v"}
               size={12}
@@ -92,14 +66,11 @@ const NoteItem = ({ item, type }) => {
       </View>
       {type == "latest" && (
         <View
-          style={{
-            width: screenWidth * 0.85,
-            paddingVertical: 5,
-          }}
+          style={noteItemDimensions.noteItemHeaderTagDimensions}
         >
           <Text
             style={[
-              { fontWeight: "bold", paddingLeft: 5 },
+              noteItemStyle.noteHeaderTitle,
               noteContainerStyle.HeaderColor,
             ]}
           >
@@ -109,15 +80,11 @@ const NoteItem = ({ item, type }) => {
       )}
 
       <View
-        style={{
-          width: screenWidth * 0.8,
-          marginLeft: screenWidth * 0.05,
-          marginRight: screenWidth * 0.02,
-        }}
+        style={noteItemDimensions.noteItemBodyDimensions}
       >
         <Text
           style={[
-            { textAlign: "justify", fontSize: 14 },
+            noteItemStyle.noteBody,
             noteContainerStyle.descriptionColor,
           ]}
         >
