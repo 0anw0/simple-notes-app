@@ -56,7 +56,6 @@ const underlineButtton = StyleSheet.create({
   },
 });
 
-
 const divider = StyleSheet.create({
   dividerContainer: {
     flexDirection: "row",
@@ -117,7 +116,7 @@ const viewTypeComponent = StyleSheet.create({
     justifyContent: "center",
     borderRadius: screenWidth * 0.0123,
     alignItems: "center",
-    width: screenWidth * 0.315,
+    width: screenWidth * 0.312,
     height: screenHeight * 0.0425,
     marginLeft: screenHeight * 0.01,
   },
@@ -136,9 +135,30 @@ const viewTypeComponent = StyleSheet.create({
   },
 });
 
+const sectionComponent = StyleSheet.create({
+  container: {
+    justifyContent: "flex-start",
+    alignItems: "center",
+    flexDirection: "row",
+    padding: screenWidth * 0.025,
+    width: screenWidth * 0.85,
+    height: screenHeight * 0.065,
+    borderWidth: screenWidth * 0.008,
+    borderRadius: screenWidth * 0.0375,
+    marginBottom: screenHeight * 0.02,
+  },
+  sectionTitle: {
+    width: screenWidth * 0.6,
+  },
+  counter: {
+    width: screenWidth * 0.15,
+    fontSize:20, 
+    fontWeight:'bold'
+  },
+});
+
 const linearGradientColors = [MainBtn, MainBtnTint];
 const linearGradientColorsOutline = [SecBtn, SecBtnTint];
-
 
 export {
   ButtonComponent,
@@ -149,4 +169,5 @@ export {
   dialog,
   textInputComponent,
   viewTypeComponent,
+  sectionComponent,
 };

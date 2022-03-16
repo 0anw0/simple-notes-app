@@ -1,10 +1,17 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import { ViewType, EmptyPadding, NoteList, FloatButton } from "../components/index";
+import {
+  ViewType,
+  NoteSection,
+  EmptyPadding,
+  NoteLatest,
+  FloatButton,
+} from "../components/index";
+
 import { MyNoteScr } from "../styles/index";
 
-import {d_notes} from "../dommyNotes";
+import { d_notes } from "../dommyNotes";
 
 class MyNote extends React.Component {
   constructor(props) {
@@ -28,12 +35,21 @@ class MyNote extends React.Component {
 
         <ViewType onTypeChange={this._handleTypeChange} />
 
-        <EmptyPadding ratio={0.025} />
+        <EmptyPadding ratio={0.012} />
 
-        <View style={MyNoteScr.listContainer}>
-          <NoteList type={type} data={data} />
-        </View>
-        <FloatButton /> 
+        {type == "latest" && (
+          <View style={MyNoteScr.listContainer}>
+            <NoteLatest type={'latest'} data={data} />
+          </View>
+        )}
+
+        {type == "section" && (
+          <View style={MyNoteScr.listContainer}>
+            <NoteSection type={'section'} data={data} />
+          </View>
+        )}
+        
+        <FloatButton />
       </View>
     );
   }

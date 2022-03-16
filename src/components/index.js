@@ -9,6 +9,7 @@ export * from "./noteList";
 export * from "./noteListComp/noteMediaBtns.js"
 export * from "./noteListComp/floatButton.js"
 export * from "./noteListComp/optionButton.js"
-
+export * from "./noteSection.js"
+export * from "./noteListComp/sections.js"
 
 

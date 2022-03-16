@@ -106,8 +106,9 @@ const MyNoteScr = StyleSheet.create({
     backgroundColor: MainBackground,
   },
   listContainer:{
+    paddingTop: screenHeight * 0.025 , 
     width: screenWidth * 0.9, 
-    height: screenHeight * 0.75, 
+    height: screenHeight * 0.775, 
     borderRadius:5, 
 }
 });

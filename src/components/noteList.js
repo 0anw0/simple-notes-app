@@ -2,10 +2,9 @@ import React from "react";
 import { FlatList } from "react-native";
 
 import { NoteItem } from "./noteListComp/noteItem";
-import { EmptyPadding } from "../components/emptyPadding";
 
-function NoteList(props) {
-  const renderNotes = ({ item }) => <NoteItem item={item} />;
+function NoteLatest(props) {
+  const renderNotes = ({ item }) => <NoteItem item={item} type={props.type}/>;
 
   return (
     <FlatList
@@ -17,4 +16,4 @@ function NoteList(props) {
   );
 }
 
-export { NoteList };
+export { NoteLatest };

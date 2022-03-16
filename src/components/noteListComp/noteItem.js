@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 import { _getNoteContainerStyle } from "../../styles/index";
 
 import { screenWidth, screenHeight } from "../../config/index";
 
-const NoteItem = ({ item }) => {
+const NoteItem = ({ item, type }) => {
   const noteContainerStyle = _getNoteContainerStyle(item.sectionTheme);
   return (
     <TouchableOpacity
@@ -31,22 +32,44 @@ const NoteItem = ({ item }) => {
           width: screenWidth * 0.86,
         }}
       >
-        <TouchableOpacity
-          style={[
-            noteContainerStyle.sectionTagBackgroundColor,
-            {
-              paddingLeft: 10,
-              paddingRight: 10,
-              borderRadius: 151,
-            },
-          ]}
-        >
-          <Text
-            style={[{ fontWeight: "700" }, noteContainerStyle.sectionTagColor]}
+        {type == "section" ? (
+          <View
+            style={{
+              width: screenWidth * 0.5,
+              paddingVertical: 5,
+            }}
           >
-            {item.section}
-          </Text>
-        </TouchableOpacity>
+            <Text
+              style={[
+                { fontWeight: "bold", paddingLeft: 5 },
+                noteContainerStyle.HeaderColor,
+              ]}
+            >
+              {item.title}
+            </Text>
+          </View>
+        ) : (
+          <TouchableOpacity
+            style={[
+              noteContainerStyle.sectionTagBackgroundColor,
+              {
+                paddingLeft: 10,
+                paddingRight: 10,
+                borderRadius: 151,
+              },
+            ]}
+          >
+            <Text
+              style={[
+                { fontWeight: "700" },
+                noteContainerStyle.sectionTagColor,
+              ]}
+            >
+              {item.section}
+            </Text>
+          </TouchableOpacity>
+        )}
+
         <View style={{ flexDirection: "row" }}>
           <Text style={noteContainerStyle.dateColor}>
             {item.timestamp.toDateString()}
@@ -55,34 +78,35 @@ const NoteItem = ({ item }) => {
             style={{
               width: 20,
               height: 20,
+              justifyContent:'center', 
+              paddingLeft: 10
             }}
           >
-            <Text
-              style={[
-                { fontWeight: "bold", paddingLeft: 10 },
-                noteContainerStyle.bergerMenuColor,
-              ]}
-            >
-              :
-            </Text>
+            <FontAwesome5
+              name={"ellipsis-v"}
+              size={12}
+              {...noteContainerStyle.bergerMenuColor}
+            />
           </TouchableOpacity>
         </View>
       </View>
-      <View
-        style={{
-          width: screenWidth * 0.85,
-          paddingVertical: 5,
-        }}
-      >
-        <Text
-          style={[
-            { fontWeight: "bold", paddingLeft: 5 },
-            noteContainerStyle.HeaderColor,
-          ]}
+      {type == "latest" && (
+        <View
+          style={{
+            width: screenWidth * 0.85,
+            paddingVertical: 5,
+          }}
         >
-          {item.title}
-        </Text>
-      </View>
+          <Text
+            style={[
+              { fontWeight: "bold", paddingLeft: 5 },
+              noteContainerStyle.HeaderColor,
+            ]}
+          >
+            {item.title}
+          </Text>
+        </View>
+      )}
 
       <View
         style={{
@@ -104,4 +128,4 @@ const NoteItem = ({ item }) => {
   );
 };
 
-export {NoteItem}
+export { NoteItem };

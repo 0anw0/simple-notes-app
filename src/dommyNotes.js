@@ -12,7 +12,7 @@ const d_notes = [
     videos: [],
   },
   {
-    id: 2,
+    id: 17,
     title: "This is my Note Headline",
     description:
       "Lorem Ipsum is not simply random text. It has root in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
@@ -24,7 +24,7 @@ const d_notes = [
     videos: [],
   },
   {
-    id: 3,
+    id: 15,
     title: "This is my Note Headline",
     description:
       "Lorem Ipsum is not simply random text. It has root in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
@@ -36,7 +36,7 @@ const d_notes = [
     videos: [],
   },
   {
-    id: 4,
+    id: 13,
     title: "This is my Note Headline",
     description:
       "Lorem Ipsum is not simply random text. It has root in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
@@ -48,7 +48,7 @@ const d_notes = [
     videos: [],
   },
   {
-    id: 5,
+    id: 12,
     title: "This is my Note Headline",
     description:
       "Lorem Ipsum is not simply random text. It has root in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
@@ -58,19 +58,8 @@ const d_notes = [
     images: [],
     voice: [],
     videos: [],
-  }
-];
-
-export { d_notes };
-
-/**
- * 
- * 
- * 
- * 
- * 
- * 
- * {
+  },
+  {
     id: 2,
 
     title: "Audio",
@@ -180,7 +169,8 @@ export { d_notes };
   {
     id: 10,
 
-    title: "El Ahly Vs Pyramids match today at 9 pm, who will win this?? lets see  ",
+    title:
+      "El Ahly Vs Pyramids match today at 9 pm, who will win this?? lets see  ",
     description:
       "Lorem Ipsum is not simply random text. It has root in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock",
     section: "Sports",
@@ -189,5 +179,17 @@ export { d_notes };
     images: [],
     voice: [],
     videos: [],
-  }
+  },
+];
+
+export { d_notes };
+
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */

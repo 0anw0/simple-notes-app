@@ -41,7 +41,7 @@ function ViewType(props) {
             viewTypeComponent.boxContainer,
             viewType == "latest"
               ? viewTypeComponent.selectedViewContainer
-              : viewTypeComponent.untitleselectedViewContainer,
+              : viewTypeComponent.unselectedViewContainer,
           ]}
         >
           <Text
