@@ -189,6 +189,14 @@ const noteItemStyle = StyleSheet.create({
   },
 });
 
+const NoteAreaComponent = StyleSheet.create({
+  container:{
+    width: screenWidth * 0.85,
+    height: screenHeight * 0.6,
+    borderWidth:1,
+  }
+})
+
 const linearGradientColors = [MainBtn, MainBtnTint];
 const linearGradientColorsOutline = [SecBtn, SecBtnTint];
 
@@ -203,4 +211,5 @@ export {
   viewTypeComponent,
   sectionComponent,
   noteItemStyle,
+  NoteAreaComponent
 };

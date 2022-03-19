@@ -32,11 +32,14 @@ function FloatButton(props) {
               icon={"pen"}
               gredientColors={penLinearGradientFLoatButton}
               onPress={props.navigate}
+              type='keyboard'
             />
             <OptionButton
               icon={"microphone"}
               gredientColors={microphoneLinearGradientFLoatButton}
               onPress={props.navigate}
+              type='microphone'
+
             />
           </View>
           <View style={floatButtonsView.secondContainer}>
@@ -44,12 +47,15 @@ function FloatButton(props) {
               icon={"camera"}
               gredientColors={cameraLinearGradientFLoatButton}
               onPress={props.navigate}
+              type='camera'
+
             />
             <OptionButton
               icon={"video"}
               gredientColors={videoLinearGradientFLoatButton}
-              onPress={props.navigate}
-            />
+              onPress={props.navigate}           
+              type='video'
+               />
           </View>
         </View>
       )}

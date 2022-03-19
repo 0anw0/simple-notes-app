@@ -1,9 +1,16 @@
 import React from "react";
-import { View, Dimensions, Text } from "react-native";
+import { View, Dimensions, Text, TextInput } from "react-native";
+import AppLoading from "expo-app-loading";
 
-import { Button, EmptyPadding, NoteArea, MediaButton } from "../components/index";
+import {
+  Button,
+  EmptyPadding,
+  NoteArea,
+  FloatButton,
+} from "../components/index";
 
 import { EnglishLang } from "../config/index";
+
 
 const { ADD_NOTE } = EnglishLang;
 
@@ -14,9 +21,16 @@ class CreateNote extends React.Component {
     this.state = {
       headline: "",
       description: "",
-      noteMedia: false,
+      noteType: false,
+      loaded: false,
     };
   }
+
+  componentDidMount() {
+    let { noteType } = this.props.route.params;
+    this.setState({ loaded: true, noteType });
+  }
+
   render() {
     return (
       <View
@@ -24,14 +38,23 @@ class CreateNote extends React.Component {
           backgroundColor: "#fff",
           alignItems: "center",
           flex: 1,
+          paddingTop: 20,
         }}
       >
-        <EmptyPadding ratio={0.025} />
-        <NoteArea />
-        <EmptyPadding ratio={0.025} />
-        <MediaButton /> 
-        <EmptyPadding ratio={0.025} />
-        <Button title={ADD_NOTE} />
+        {this.state.loaded ? (
+          <View>
+            <Text>title</Text>
+            <TextInput style={{ borderWidth: 1 }} />
+            <Text>SECTION</Text>
+            <TextInput style={{ borderWidth: 1 }} />
+            <EmptyPadding ratio={0.012} />
+            <NoteArea />
+            <EmptyPadding ratio={0.012} />
+            <FloatButton navigate={this.navigate} />
+          </View>
+        ) : (
+          <AppLoading />
+        )}
       </View>
     );
   }

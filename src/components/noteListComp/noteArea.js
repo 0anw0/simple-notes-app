@@ -3,12 +3,12 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import {
-  _getNoteContainerStyle,
+  NoteAreaComponent,
 } from "../../styles/index";
 
 const NoteArea = () => {
   return (
-   <View style={{width: 300, height: 300, borderWidth:1}}>
+   <View style={NoteAreaComponent.container}>
      <Text>HERE</Text> 
    </View>
   );
