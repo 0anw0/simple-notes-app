@@ -3,7 +3,7 @@ import { StyleSheet, StatusBar, Dimensions } from "react-native";
 
 import { screenWidth, screenHeight, colorSchema } from "../config/index";
 
-import { noteItemDimensions } from "./index";
+import { noteItemDimensions } from "./dimensions";
 
 const {
   MainBackground,
@@ -23,11 +23,11 @@ const {
 
 const ButtonComponent = StyleSheet.create({
   container: {
-    width: screenWidth * 0.75,
-    height: screenHeight * 0.07,
+    width: screenWidth * 0.75, //Button Width
+    height: screenHeight * 0.07,//Button Height
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: screenHeight * 0.015,
+    borderRadius: screenHeight * 0.015, //Button border radious
   },
   title: {
     fontWeight: "500",
@@ -139,14 +139,14 @@ const viewTypeComponent = StyleSheet.create({
 
 const sectionComponent = StyleSheet.create({
   container: {
-    justifyContent: "flex-start",
+    justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "row",
     padding: screenWidth * 0.025,
     height: screenHeight * 0.065,
-    borderWidth: screenWidth * 0.008,
-    borderRadius: screenWidth * 0.0375,
-    marginBottom: screenHeight * 0.02,
+    borderWidth: 2,
+    borderRadius:15,
+    marginBottom: 15,
   },
   sectionTitle: {
     width: screenWidth * 0.6,
@@ -166,7 +166,7 @@ const noteItemStyle = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#ff4567",
+    width: screenWidth * 0.875,
     marginBottom: screenHeight * 0.01,
     borderRadius: screenHeight * 0.01,
     padding: 5,
@@ -181,8 +181,12 @@ const noteItemStyle = StyleSheet.create({
     width: noteItemDimensions.inSectionNoteHeaderWidth,
     paddingVertical: 5,
   },
-  noteHeaderTitle: { fontWeight: "bold", paddingLeft: 5 }, 
-  noteBody:{ textAlign: "justify", fontSize: 14 }
+  noteHeaderTitle: { fontWeight: "bold", paddingLeft: 5 },
+  noteBody: { textAlign: "justify", fontSize: 14 },
+  inSectionNoteItems: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 const linearGradientColors = [MainBtn, MainBtnTint];

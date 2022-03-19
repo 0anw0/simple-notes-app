@@ -15,15 +15,26 @@ function sortSections(data) {
 
   sectionArray.forEach((e) => {
     let counter = 0,
-      notes = [];
-    data.forEach((x) => {
-      if (e == x.section) {
+      notes = [],
+      theme = "";
+    data.forEach((element) => {
+      if (e == element.section) {
         counter++;
-        notes.push(x);
+        theme = element.sectionTheme;
+        notes.push({
+          title: element.title,
+          description: element.description,
+          sectionTheme: theme,
+          timestamp: element.timestamp,
+          images: element.images,
+          voice: element.voice,
+          videos: element.videos,
+        });
       }
     });
 
     sectionCounter.push({
+      sectionTheme: theme,
       section: e,
       id: id,
       count: counter,
@@ -36,7 +47,9 @@ function sortSections(data) {
 }
 
 function NoteSection(props) {
-  const renderSections = ({ item }) => <Section item={item} type={props.type}/>;
+  const renderSections = ({ item }) => (
+    <Section item={item} type={props.type} />
+  );
   let sections = sortSections(props.data);
   return (
     <FlatList

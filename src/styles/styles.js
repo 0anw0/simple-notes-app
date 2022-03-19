@@ -109,7 +109,6 @@ const MyNoteScr = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingTop: screenHeight * 0.025 , 
     width: screenWidth * 0.9, 
     height: screenHeight * 0.775, 
     borderRadius:5, 

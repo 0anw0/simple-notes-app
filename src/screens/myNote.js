@@ -35,19 +35,21 @@ class MyNote extends React.Component {
 
         <ViewType onTypeChange={this._handleTypeChange} />
 
-        <EmptyPadding ratio={0.012} />
+        <EmptyPadding ratio={0.025} />
 
         {type == "latest" && (
           <View style={MyNoteScr.listContainer}>
-            <NoteLatest type={'latest'} data={data} />
+            <NoteLatest type={"latest"} data={data}/>
           </View>
         )}
 
         {type == "section" && (
-            <NoteSection type={'section'} data={data} />
+          <View style={MyNoteScr.listContainer}>
+            <NoteSection type={"section"} data={data} />
+          </View>
         )}
-        
-        <FloatButton />
+
+        <FloatButton navigate={this.navigate} />
       </View>
     );
   }

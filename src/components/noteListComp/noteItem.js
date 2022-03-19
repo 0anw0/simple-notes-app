@@ -8,10 +8,7 @@ import {
   noteItemStyle,
 } from "../../styles/index";
 
-import { screenWidth, screenHeight } from "../../config/index";
-
 const NoteItem = ({ item, type }) => {
-  console.log(item, type);
   const noteContainerStyle = _getNoteContainerStyle(item.sectionTheme);
   return (
     <TouchableOpacity
@@ -21,8 +18,15 @@ const NoteItem = ({ item, type }) => {
         noteContainerStyle.containerBorder,
       ]}
     >
+      {/* --------------------------Note Container-------------------------- */}
       <View style={noteItemStyle.noteHeaderContainer}>
+        {/* ---Rendering Note Item while Section View is selected--- */}
+        {/* ---Otherwise, Render Regular note--- */}
+        {/* ___________________________________________________________________ */}
+        {/* --------------------------Note Header-------------------------- */}
+
         {type == "section" ? (
+          //Note Title ( if true )
           <View style={noteItemStyle.noteHeaderTitleContainer}>
             <Text
               style={[
@@ -34,6 +38,7 @@ const NoteItem = ({ item, type }) => {
             </Text>
           </View>
         ) : (
+          // Note sectionTag (if false)
           <TouchableOpacity
             style={[
               noteContainerStyle.sectionTagBackgroundColor,
@@ -50,6 +55,8 @@ const NoteItem = ({ item, type }) => {
             </Text>
           </TouchableOpacity>
         )}
+        {/* ------------------------------------------------------- */}
+        {/** Rendering Date and Time & Burger menu button */}
 
         <View style={{ flexDirection: "row" }}>
           <Text style={noteContainerStyle.dateColor}>
@@ -64,10 +71,13 @@ const NoteItem = ({ item, type }) => {
           </TouchableOpacity>
         </View>
       </View>
+
+      {/* ___________________________________________________________________ */}
+      {/** ------------------------------- Note Body ---------------------------- */}
+      {/** ----------- Render Header if in latest View --------------- */}
+
       {type == "latest" && (
-        <View
-          style={noteItemDimensions.noteItemHeaderTagDimensions}
-        >
+        <View style={noteItemDimensions.noteItemHeaderTagDimensions}>
           <Text
             style={[
               noteItemStyle.noteHeaderTitle,
@@ -78,15 +88,11 @@ const NoteItem = ({ item, type }) => {
           </Text>
         </View>
       )}
+      {/** -----------Body of the Note --------------- */}
 
-      <View
-        style={noteItemDimensions.noteItemBodyDimensions}
-      >
+      <View style={noteItemDimensions.noteItemBodyDimensions}>
         <Text
-          style={[
-            noteItemStyle.noteBody,
-            noteContainerStyle.descriptionColor,
-          ]}
+          style={[noteItemStyle.noteBody, noteContainerStyle.descriptionColor]}
         >
           {item.description}
         </Text>

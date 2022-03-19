@@ -26,4 +26,9 @@ const buttonGradient = {
   videoNoteButton:['#FFB4AF', '#4738EA', '#423EE2']
 }
 
-export { screenHeight, screenWidth, colorSchema, buttonGradient };
+const mediaButtonGradient = { 
+  middleButton: ['#CAB8FF', '#1D19CF'], 
+  otherButton:['#68BCE0', '#2F2BE7']
+}
+
+export { screenHeight, screenWidth, colorSchema, buttonGradient, mediaButtonGradient };

@@ -31,20 +31,24 @@ function FloatButton(props) {
             <OptionButton
               icon={"pen"}
               gredientColors={penLinearGradientFLoatButton}
+              onPress={props.navigate}
             />
             <OptionButton
               icon={"microphone"}
               gredientColors={microphoneLinearGradientFLoatButton}
+              onPress={props.navigate}
             />
           </View>
           <View style={floatButtonsView.secondContainer}>
             <OptionButton
               icon={"camera"}
               gredientColors={cameraLinearGradientFLoatButton}
+              onPress={props.navigate}
             />
             <OptionButton
               icon={"video"}
               gredientColors={videoLinearGradientFLoatButton}
+              onPress={props.navigate}
             />
           </View>
         </View>

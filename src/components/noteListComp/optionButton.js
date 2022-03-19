@@ -10,7 +10,7 @@ function OptionButton(props) {
     colors = props.gredientColors || linearGradientFLoatButton,
     iconColor= props.iconColor || 'white'
   return (
-    <TouchableOpacity onPress={props.onPress} style={optionButton.container}>
+    <TouchableOpacity onPress={()=> {props.onPress('CreateNote')}} style={optionButton.container}>
       <LinearGradient
         colors={colors}
         style={optionButton.innerContainer}

@@ -1,9 +1,9 @@
 import { screenWidth, screenHeight } from "../config/index";
 
 const noteItemDimensions = {
-  noteContainerWidth: screenWidth * 0.9,
-  noteHeaderWidth: screenWidth * 0.86,
-  inSectionNoteHeaderWidth: screenWidth * 0.5,
+  noteContainerWidth: screenWidth * 0.86,
+  noteHeaderWidth: screenWidth * 0.84,
+  inSectionNoteHeaderWidth: screenWidth * 0.48,
   noteItemSectionHeaderTagDimensions: {
     paddingLeft: 10,
     paddingRight: 10,
@@ -16,11 +16,11 @@ const noteItemDimensions = {
     paddingLeft: 10
   },
   noteItemHeaderTagDimensions: {
-    width: screenWidth * 0.85,
+    width: screenWidth * 0.83,
     paddingVertical: 5,
   },
   noteItemBodyDimensions: {
-    width: screenWidth * 0.82,
+    width: screenWidth * 0.85,
     marginLeft: screenWidth * 0.05,
     marginRight: screenWidth * 0.01,
   }
