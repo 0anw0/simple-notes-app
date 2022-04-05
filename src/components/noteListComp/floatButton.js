@@ -22,9 +22,9 @@ import { OptionButton } from "./optionButton";
 const { MainBtn, SecBtn } = colorSchema;
 
 function FloatButton(props) {
-  const [pressed, setPressed] = useState(false);
+  const [pressed, setPressed] = useState(true);
   return (
-    <View style={floatButtonsView.container}>
+    <View style={  floatButtonsView.container }>
       {pressed && (
         <View style={floatButtonsView.buttonsContainer}>
           <View style={floatButtonsView.firstContainer}>

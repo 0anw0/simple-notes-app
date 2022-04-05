@@ -32,6 +32,8 @@ const EnglishLang = {
   EDIT: "edit",
   NOTE: "NOTE",
   APPEND_TO_THIS_NOTE: "Append to this note",
+  TITLE:'TITLE',
+  
 };
 
 export { EnglishLang, ArabicLang };

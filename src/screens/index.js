@@ -4,3 +4,4 @@ export * from "./forgetPassword";
 export * from "./signin";
 export * from "./welcome";
 export * from "./myNote";
+export * from "./camera";

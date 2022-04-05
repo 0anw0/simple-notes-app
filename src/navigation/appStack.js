@@ -1,7 +1,7 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { Note, MyNote, CreateNote } from "../screens/index";
+import { Note, MyNote, CreateNote,CameraScr } from "../screens/index";
 
 import { EnglishLang, colorSchema } from "../config/index";
 
@@ -13,7 +13,7 @@ const AppNativeStack = createNativeStackNavigator();
 function AppStack() {
   return (
     <AppNativeStack.Navigator>
-      {/** 
+     {/** 
       <AppNativeStack.Screen
         name="Note"
         component={Note}
@@ -28,7 +28,7 @@ function AppStack() {
           headerTitleAlign: "center",
         }}
       />
-      */}
+      
       <AppNativeStack.Screen
         name="MY NOTE"
         component={MyNote}
@@ -42,19 +42,34 @@ function AppStack() {
           headerBackVisible: false,
           headerTitleAlign: "center",
         }}
-      />
+      />*/}
+      
       <AppNativeStack.Screen
         name="CreateNote"
         component={CreateNote}
         options={{
-          headerShown: true,
-          title: CREATE_A_NEW_NOTE,
+          headerShown: false,
+          /*title: CREATE_A_NEW_NOTE,
           headerTintColor: SecBtn,
           headerStyle: {
             backgroundColor: MainBtn,
           },
           headerBackVisible: false,
-          headerTitleAlign: "center",
+          headerTitleAlign: "center",*/
+        }}
+      />
+      <AppNativeStack.Screen
+        name="Camera"
+        component={CameraScr}
+        options={{
+          headerShown: false,
+          /*title: CREATE_A_NEW_NOTE,
+          headerTintColor: SecBtn,
+          headerStyle: {
+            backgroundColor: MainBtn,
+          },
+          headerBackVisible: false,
+          headerTitleAlign: "center",*/
         }}
       />
     </AppNativeStack.Navigator>

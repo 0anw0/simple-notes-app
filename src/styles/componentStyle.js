@@ -19,12 +19,15 @@ const {
   sectionBtnTint,
   pressedButtonColor,
   pressedButtonColorTint,
+  addSectionColorReverse,
+  createNoteContainer,
+  createNoteContainerBorder
 } = colorSchema;
 
 const ButtonComponent = StyleSheet.create({
   container: {
     width: screenWidth * 0.75, //Button Width
-    height: screenHeight * 0.07,//Button Height
+    height: screenHeight * 0.07, //Button Height
     alignItems: "center",
     justifyContent: "center",
     borderRadius: screenHeight * 0.015, //Button border radious
@@ -91,10 +94,11 @@ const textInputComponent = StyleSheet.create({
   inputLabel: { color: MainTextTone, fontSize: 14, letterSpacing: 2 },
   inputStyle: {
     backgroundColor: inputColor,
-    height: screenHeight * 0.06,
+    width: screenWidth * 0.85,
+    height: screenHeight * 0.05,
     marginVertical: screenHeight * 0.005,
     borderRadius: screenHeight * 0.015,
-    paddingHorizontal: screenHeight * 0.02,
+    paddingHorizontal: screenHeight * 0.01,
   },
 });
 
@@ -145,7 +149,7 @@ const sectionComponent = StyleSheet.create({
     padding: screenWidth * 0.025,
     height: screenHeight * 0.065,
     borderWidth: 2,
-    borderRadius:15,
+    borderRadius: 15,
     marginBottom: 15,
   },
   sectionTitle: {
@@ -190,13 +194,56 @@ const noteItemStyle = StyleSheet.create({
 });
 
 const NoteAreaComponent = StyleSheet.create({
-  container:{
+  container: {
     width: screenWidth * 0.85,
-    height: screenHeight * 0.6,
-    borderWidth:1,
-  }
-})
+    height: screenHeight* 0.55,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor:createNoteContainerBorder,
+    backgroundColor:createNoteContainer, 
+  },
+});
 
+const SectionSelectorComponent = StyleSheet.create({
+  sectionBarContainer:{
+    height: screenHeight * 0.05,
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: screenHeight * 0.0075,
+    paddingHorizontal: screenHeight * 0.0125,
+    borderRadius: 5,
+  },
+  sectionBar: {
+    backgroundColor: SecBtn,
+    
+  },
+  selectedSectionBar: {
+    backgroundColor: addSectionColorReverse,
+
+  },
+  addSectionBtn: {
+    width: screenHeight * 0.05,
+    height: screenHeight * 0.05,
+    backgroundColor: SecBtn,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    marginRight: 5,
+  },
+  section_types: {
+    flexDirection: "row",
+    width: screenWidth * 0.85,
+    height: screenHeight * 0.05,
+  },
+  sectionAddProcess: {
+    flexDirection: "row",
+    width: screenWidth * 0.85,
+    height: screenHeight * 0.05,
+    alignItems: "center",
+    paddingTop: 10,
+  },
+  sectionTxtInput: { width: screenWidth * 0.725 },
+});
 const linearGradientColors = [MainBtn, MainBtnTint];
 const linearGradientColorsOutline = [SecBtn, SecBtnTint];
 
@@ -211,5 +258,6 @@ export {
   viewTypeComponent,
   sectionComponent,
   noteItemStyle,
-  NoteAreaComponent
+  NoteAreaComponent,
+  SectionSelectorComponent,
 };

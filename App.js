@@ -7,12 +7,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { WelcomeStack, AppStack } from "./src/navigation/index";
 
-import { loadFonts } from "./src/assets/fonts";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
-  if (loadFonts()) {
     return (
       <NavigationContainer>
         <Stack.Navigator>
@@ -31,9 +29,6 @@ function App() {
         </Stack.Navigator>
       </NavigationContainer>
     );
-  } else {
-    return <AppLoading />
-  }
 }
 
 export default App;

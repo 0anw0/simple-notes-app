@@ -21,8 +21,10 @@ const {
 
 const floatButtonActivator = StyleSheet.create({
   buttonPosition: {
-    position:'absolute',
-    bottom: screenHeight * -0.005
+    width: screenWidth * 0.36,
+    height: screenHeight * 0.07,
+    justifyContent: "center",
+    flexDirection: "row",
   },
   pressed: {},
   notPressed: {},
@@ -30,26 +32,27 @@ const floatButtonActivator = StyleSheet.create({
 
 const floatButtonsView = StyleSheet.create({
   container: {
-    position: "absolute",
-    bottom: screenHeight * 0.05,
+    position: "relative",
+    justifyContent:'flex-end',
+    alignItems:'center',
+    bottom: screenHeight * 0.2,
     width: screenWidth * 0.8,
-    height: screenHeight * 0.2,
-    justifyContent: "space-between",
-    alignItems: "center",
+    height: screenHeight * 0.21,
   },
   buttonsContainer: {
     justifyContent: "flex-start",
-    alignItems: "center",
+    alignItems:'center',
+
   },
   firstContainer: {
-    width: screenWidth * 0.36,
-    height: screenHeight * 0.095,
+    width: screenWidth * 0.325,
+    height: screenHeight * 0.07,
     justifyContent: "space-between",
     flexDirection: "row",
   },
   secondContainer: {
     width: screenWidth * 0.6,
-    height: screenHeight * 0.1,
+    height: screenHeight * 0.07,
     justifyContent: "space-between",
     flexDirection: "row",
   },
@@ -76,6 +79,8 @@ const optionButton = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  container: {
+  }
 });
 
 const linearGradientFLoatButton = [MainBtn, MainBtnTint];

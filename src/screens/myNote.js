@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Button } from "react-native";
 
 import {
   ViewType,
@@ -10,7 +10,7 @@ import {
 } from "../components/index";
 
 import { MyNoteScr } from "../styles/index";
-
+import { TakeImage } from "../functions/takeImage";
 import { d_notes } from "../dommyNotes";
 
 class MyNote extends React.Component {
@@ -31,25 +31,20 @@ class MyNote extends React.Component {
     let { type, data } = this.state;
     return (
       <View style={MyNoteScr.container}>
-        <EmptyPadding ratio={0.012} />
-
+        <EmptyPadding ratio={0.02} />
         <ViewType onTypeChange={this._handleTypeChange} />
-
-        <EmptyPadding ratio={0.025} />
-
+        <EmptyPadding ratio={0.02} />
         {type == "latest" && (
           <View style={MyNoteScr.listContainer}>
-            <NoteLatest type={"latest"} data={data}/>
+            <NoteLatest type={"latest"} data={data} />
           </View>
         )}
-
         {type == "section" && (
           <View style={MyNoteScr.listContainer}>
             <NoteSection type={"section"} data={data} />
           </View>
         )}
-
-        <FloatButton navigate={this.navigate} />
+        <FloatButton />
       </View>
     );
   }
