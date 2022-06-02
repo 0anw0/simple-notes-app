@@ -4,6 +4,7 @@ import { View, Image, Text } from "react-native";
 import { Button } from "../components/index";
 import { welcomeScr } from "../styles/index";
 import { EnglishLang } from "../config/index";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const { SIGN_IN, ADD_NOTE_FOR_NOW } = EnglishLang;
 
@@ -12,6 +13,9 @@ class Welcome extends React.Component {
     super(props);
     this.navigate = this.props.navigation.navigate;
   }
+  componentDidMount() {
+  }
+
   render() {
     const uri = require("../assets/note-illustration.png");
     const uri2 = require("../assets/Rectangle.png");

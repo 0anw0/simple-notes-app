@@ -14,5 +14,9 @@ export * from "./noteListComp/sections.js"
 export * from "./noteListComp/noteArea"
 export * from "./mediaButtons"
 export * from "./noteListComp/circleButton"
-export * from "./section_selector"
+export * from "./sectionSelector"
 export * from "./header"
+export * from "./TextModal"
+export * from "./VoiceModal"
+export * from './AudioPlayer/slider'
+export * from './cameraPerview'

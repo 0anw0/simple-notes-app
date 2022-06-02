@@ -112,9 +112,11 @@ const MyNoteScr = StyleSheet.create({
 
 const createNoteScr = StyleSheet.create({
   container: {
+    flex: 1,
     paddingTop: StatusBar.currentHeight,
     alignItems: "center",
     backgroundColor: MainBackground,
+    height: screenHeight - StatusBar.currentHeight,
   },
   temp_ButtonBar: {
     flexDirection: "row",
@@ -129,6 +131,21 @@ const createNoteScr = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  buttonsContainer: {
+    height: screenHeight * 0.07,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    borderRadius: 5,
+    width: 205,
+  },
+  buttons: {
+    backgroundColor: SecBtn,
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 25,
+  },
 });
 
 const CameraScrStyles = StyleSheet.create({
@@ -137,6 +154,7 @@ const CameraScrStyles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: StatusBar.currentHeight,
   },
   cameraView: {
     flex: 1,
@@ -149,39 +167,67 @@ const CameraScrStyles = StyleSheet.create({
     flexDirection: "row",
   },
   optionButtonsSection: {
+    flex: 1,
     position: "absolute",
-    left: 5,
-    top: 10,
+    left: screenWidth * 0.025,
+    top: screenHeight * 0.025,
     flexDirection: "column",
     justifyContent: "space-between",
   },
   flashButton: {
-    borderRadius: 50,
-    height: screenHeight * 0.25,
-    width: screenWidth * 0.25,
+    borderRadius: screenWidth * 0.15 * 0.5,
+    height: screenWidth * 0.15,
+    width: screenWidth * 0.15,
+    alignItems: "center",
+    justifyContent: "center",
   },
   toggleCameraButton: {
-    marginTop: 20,
-    borderRadius: 50,
-    height: screenWidth * 0.25,
-    width: screenWidth * 0.25,
+    borderRadius: screenWidth * 0.15 * 0.5,
+    height: screenWidth * 0.15,
+    width: screenWidth * 0.15,
+    alignItems: "center",
+    justifyContent: "center",
   },
   capturePictureButtonContainer: {
-    position: "absolute",
-    bottom: 0,
-    flexDirection: "row",
     flex: 1,
+    position: "relative",
+    alignItems: "flex-end",
+    paddingBottom: 20,
+    left: screenWidth * 0.4,
+    flexDirection: "row",
     width: screenWidth,
-    padding: 20,
+  },
+  capturePictureButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "#fff",
+  },
+  onPreviewButtons: {
+    width: screenWidth,
+    height: screenHeight * 0.85,
+  },
+  buttonBar: {
+    width: screenWidth * 0.75,
+    flexDirection: "row",
     justifyContent: "space-between",
   },
-  capturePictureButton:{
-    width: 70,
-    height: 70,
-    bottom: 0,
-    borderRadius: 50,
-    backgroundColor: "#fff",
-  }
+  retakeImageButton: {
+    width: 40,
+    height: 40,
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  saveImageButton: {
+    width: 40,
+    height: 40,
+    alignItems: "center",
+    borderRadius: 4,
+  },
+  videoPreview: {
+    width: screenWidth,
+    height: screenHeight,
+  },
 });
 
 export {

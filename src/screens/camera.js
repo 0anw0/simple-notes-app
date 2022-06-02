@@ -1,131 +1,58 @@
-import React from "react";
-import {
-  View,
-  Dimensions,
-  Text,
-  TextInput,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
+import React, { useRef, useState } from "react";
+import { View, Alert, TouchableOpacity } from "react-native";
 
 import AppLoading from "expo-app-loading";
 import { Camera } from "expo-camera";
 import { FontAwesome5 } from "@expo/vector-icons";
-
-import {
-  EmptyPadding,
-  NoteArea,
-  FloatButton,
-  TxtInput,
-  SectionSelector,
-  Header,
-} from "../components/index";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Video, Audio } from "expo-av";
 import { CameraScrStyles } from "../styles/index";
 import { EnglishLang } from "../config/index";
-import { TakeImage } from "../functions/takeImage";
+import { CameraPreview } from "../components/index";
 
 const { TITLE, CREATE_A_NEW_NOTE } = EnglishLang;
 
 let camera = Camera;
-
-const CameraPreview = ({ photo, retakePicture, savePhoto }) => {
-  console.log("sdsfds", photo);
-  return (
-    <View
-      style={{
-        backgroundColor: "transparent",
-        flex: 1,
-        width: screenWidth,
-        height: screenHeight,
-      }}
-    >
-      <ImageBackground
-        source={{ uri: photo && photo.uri }}
-        style={{
-          flex: 1,
-        }}
-      >
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            padding: 15,
-            justifyContent: "flex-end",
-          }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
-            <TouchableOpacity
-              onPress={retakePicture}
-              style={{
-                width: 130,
-                height: 40,
-
-                alignItems: "center",
-                borderRadius: 4,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 20,
-                }}
-              >
-                Re-take
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={savePhoto}
-              style={{
-                width: 130,
-                height: 40,
-
-                alignItems: "center",
-                borderRadius: 4,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 20,
-                }}
-              >
-                save photo
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </ImageBackground>
-    </View>
-  );
-};
 
 class CameraScr extends React.Component {
   constructor(props) {
     super(props);
     this.navigate = this.props.navigation.navigate;
     this.state = {
+      loaded: true,
       previewVisible: false,
       capturedImage: null,
       cameraType: Camera.Constants.Type.back,
       flashMode: "off",
+      uriList: [],
+      recording: false,
+      setup: "camera",
     };
   }
 
   componentDidMount() {
-    this.setState({loaded: true})
-    this.__startCamera()
+    const { setup } = this.props.route.params;
+    this.setState({ setup });
+    //this.getSavedData();
+    this.__startCamera();
   }
-
+  /*
+  getSavedData = async () => {
+    await AsyncStorage.getItem(`@uriList`)
+      .then((res) => {
+        this.setState({ uriList: JSON.parse(res) });
+        //console.log("Res ==>", res);
+      })
+      .catch((e) => {
+        console.log("---> Error Retrieving Data: ", e);
+      });
+  };
+*/
   __startCamera = async () => {
-    const { status } = await Camera.requestCameraPermissionsAsync();
+    const camera_status = await Camera.requestCameraPermissionsAsync();
+    const audio_status = await Audio.requestPermissionsAsync();
 
-    if (status == "granted") {
+    if (camera_status.status == "granted" && audio_status.status == "granted") {
       this.setState({ startCamera: true });
     } else {
       Alert.alert("Access denied", "Access is denied");
@@ -138,11 +65,32 @@ class CameraScr extends React.Component {
   };
 
   __recordVideo = async () => {
-    const photo = await camera.recordAsync();
-    this.setState({ previewVisible: true, capturedImage: photo });
+    if (this.state.recording) {
+      this.setState({
+        previewVisible: true,
+        recording: false,
+      });
+      await camera.stopRecording();
+    } else {
+      this.setState({ recording: true });
+      const photo = await camera.recordAsync();
+      this.setState({ capturedImage: photo });
+    }
   };
 
-  __savePhoto = () => {};
+  __savePhoto = async () => {
+    let arr = [];
+    const { capturedImage, uriList } = this.state;
+    arr.push(...uriList, capturedImage.uri);
+    try {
+      const jsonValue = JSON.stringify(arr);
+      await AsyncStorage.setItem(`@uriList`, jsonValue);
+    } catch (e) {
+      console.log("--> Error: Saving Image: ", e);
+    } finally {
+      this.__retakePicture();
+    }
+  };
 
   __retakePicture = () => {
     this.setState({ capturedImage: null, previewVisible: false });
@@ -150,12 +98,15 @@ class CameraScr extends React.Component {
   };
 
   __handleFlashMode = () => {
-    if (flashMode === "on") this.setState({ flashMode: "off" });
+    const { flashMode } = this.state;
+    if (flashMode === "torch") this.setState({ flashMode: "off" });
     else if (flashMode === "off") this.setState({ flashMode: "auto" });
-    else this.setState({ flashMode: "on" });
+    else this.setState({ flashMode: "torch" });
   };
 
   __switchCamera = () => {
+    const { cameraType } = this.state;
+
     if (cameraType === "back") {
       this.setState({ cameraType: "front" });
     } else {
@@ -163,8 +114,24 @@ class CameraScr extends React.Component {
     }
   };
 
+  __captureScreen = () => {
+    const { setup } = this.state;
+    if (setup == "camera") {
+      this.__takePicture();
+    } else {
+      this.__recordVideo();
+    }
+  };
+
   render() {
-    let { previewVisible, capturedImage, cameraType, flashMode } = this.state;
+    let {
+      previewVisible,
+      capturedImage,
+      cameraType,
+      flashMode,
+      recording,
+      setup,
+    } = this.state;
     return this.state.loaded ? (
       <View style={CameraScrStyles.container}>
         <View style={CameraScrStyles.cameraView}>
@@ -173,6 +140,8 @@ class CameraScr extends React.Component {
               photo={capturedImage}
               savePhoto={this.__savePhoto}
               retakePicture={this.__retakePicture}
+              flashMode={flashMode}
+              setup={setup}
             />
           ) : (
             <Camera
@@ -186,7 +155,7 @@ class CameraScr extends React.Component {
               <View style={CameraScrStyles.buttonSection}>
                 <View style={CameraScrStyles.optionButtonsSection}>
                   <TouchableOpacity
-                    onPress={this.__handleFlashMode}
+                    onPress={() => this.__handleFlashMode()}
                     style={[
                       {
                         backgroundColor: flashMode === "off" ? "#000" : "#fff",
@@ -195,30 +164,27 @@ class CameraScr extends React.Component {
                     ]}
                   >
                     <FontAwesome5
-                      name={'plus'}
+                      name={"bolt"}
                       size={20}
                       color={flashMode === "off" ? "#fff" : "#000"}
                     />
                   </TouchableOpacity>
                   <TouchableOpacity
-                    onPress={this.__switchCamera}
+                    onPress={() => this.__switchCamera()}
                     style={CameraScrStyles.toggleCameraButton}
                   >
-                    <FontAwesome5
-                      name={'plus'}
-                      size={20}
-                      color={"#fff"}
-                    />
+                    <FontAwesome5 name={"camera"} size={20} color={"#fff"} />
                   </TouchableOpacity>
                 </View>
-                <View
-                  style={CameraScrStyles.capturePictureButtonContainer}
-                >
-                    <TouchableOpacity
-                      onPress={this.__takePicture}
-                      style={CameraScrStyles.capturePictureButton}
-                    />
-                  </View>
+                <View style={CameraScrStyles.capturePictureButtonContainer}>
+                  <TouchableOpacity
+                    onPress={() => this.__captureScreen()}
+                    style={[
+                      CameraScrStyles.capturePictureButton,
+                      { backgroundColor: recording ? "red" : "white" },
+                    ]}
+                  />
+                </View>
               </View>
             </Camera>
           )}

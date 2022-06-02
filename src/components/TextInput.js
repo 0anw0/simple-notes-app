@@ -10,10 +10,10 @@ function TxtInput(props) {
   const multiline = props.multiline || false;
   const numberOfLines = props.numberOfLines || 1
   return (
-    <View>
+    <View style={textInputComponent.container}>
       <Text style={textInputComponent.inputLabel}>{props.label}</Text>
       <TextInput
-        style={textInputComponent.inputStyle}
+        style={[textInputComponent.inputStyle]}
         onChangeText={(val) => {
           props.handleValueChange(props.value, val);
         }}
